@@ -1,0 +1,11 @@
+body {
+  background-color: aquamarine;
+  max-width: 750px;
+  margin: auto;
+  padding: 10px;
+
+}
+header{
+    text-align: center;
+    height: 300%;
+}
