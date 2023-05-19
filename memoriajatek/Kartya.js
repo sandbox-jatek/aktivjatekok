@@ -7,7 +7,7 @@ class Kartya {
 
   constructor(fajlnev, szuloElem) {
     this.#fajlnev = fajlnev;
-    szuloElem.append(`<div class="kartya"><img src="" alt="kep"></div>`);
+    szuloElem.append(`<div><img class="kartya" src="" alt="kep"></div>`);
     this.#divElem = szuloElem.children("div:last-child");
     this.#imgElem = this.#divElem.children("img");
 
@@ -32,7 +32,7 @@ class Kartya {
     });
   }
 
-  getFajlnev(adat) {
+  getFajlnev() {
     return this.#fajlnev;
   }
   #setLap() {
@@ -42,7 +42,7 @@ class Kartya {
       this.#imgElem.attr("src", "kepek/hatter.jpg");
     }
   }
-  kattintas(adat) {
+  kattintas() {
     this.#allapot = !this.#allapot;
     this.#setLap();
   }
@@ -52,7 +52,7 @@ class Kartya {
     window.dispatchEvent(esemeny);
   }
 
-  eltuntet(adat) {
+  eltuntet() {
     this.#divElem.css("visibility", "hidden");
   }
 }
