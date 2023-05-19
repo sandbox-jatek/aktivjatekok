@@ -1,7 +1,42 @@
-article {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-  img {
-    width: 100px;
-  }
+img {
+  width: 100px;
+}
+
+body {
+  background-color: aquamarine;
+  max-width: 750px;
+  margin: auto;
+  padding: 10px;
+}
+header {
+  text-align: center;
+  height: 300%;
+}
+
+.game-board {
+  width: 600px;
+  height: 1050px;
+  margin: 0 auto;
+  background-color: #34495e;
+  color: #fff;
+  border: 6px solid #2c3e50;
+  border-radius: 10px;
+  padding-left: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.kartya {
+  border: 6px solid #2c3e50;
+  border-radius: 2px;
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer{
+  text-align: center;
+}
