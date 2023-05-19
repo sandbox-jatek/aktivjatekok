@@ -1,4 +1,4 @@
-class Lampak {
+class Lampa {
     #allapot
     #id
     #divElem
@@ -6,26 +6,38 @@ class Lampak {
     constructor(allapot, id, szuloElem) {
         this.#allapot = allapot;
         this.#id = id;
-        this.#divElem = szuloElem;
+
+
+        const DIV = $("<div>").addClass("keret");
+        DIV.text(allapot);
+        szuloElem.append(DIV);
+        this.#divElem = szuloElem.children("div:last-child");
+        console.log(this.#divElem);
+        console.log($("div"));
+        this.#szinBeallit();
     }
 
     setAllapot() {
-        divElem.addEventListener('click', () => {
-            id++;
-            this.#szinBeallit();
-        });
+        if (this.#allapot == 0) {
+            this.#allapot = 1;
+        } else {
+            this.#allapot = 0;
+        }
+        this.#szinBeallit();
+
     }
 
     #szinBeallit() {
-        if (allapot[id] === 1) {
-            divElem.style.backgroundColor = 'yellow';
+        if (this.#allapot === 0) {
+            this.#divElem.css("background-color", "yellow");
+
         } else {
-            divElem.style.backgroundColor = 'black';
-            id = 0;
+            this.#divElem.css("background-color", "black");
         }
+
     }
 
-    
+
 }
 
-export default Lampak;
+export default Lampa;

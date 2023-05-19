@@ -1,4 +1,4 @@
-import Lampak from "./Lampa.js";
+import Lampa from "./Lampa.js";
 
 class JatekTer {
     #db;
@@ -6,27 +6,20 @@ class JatekTer {
     #lepes;
     #allapotLista = [];
 
-    constructor(db, meret, lepes, allapotLista) {
-        this.#db = db;
-        this.#lepes = lepes;
-        this.#meret = meret;
-        this.#allapotLista = allapotLista;
-        this.#setAllapotLista();
+    constructor() {
+        this.#db = 3;
+        this.#lepes = 0;
+        this.#meret = this.#db*this.#db;
+        this.#allapotLista = [1,1,0,0,1,0,0,0,1];
+        this.#setAllapotListaMegjelenites();
     }
 
-    #setAllapotLista() {
+    #setAllapotListaMegjelenites() {
         const ARTICLE = $("article");
         const allapotLista = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
 
-        for (let i = 0; i < allapotLista.length; i++) {
-            if (i % 3 === 0 && i !== 0) {
-                ARTICLE.append($("<br>"));
-            }
-            
-            const DIV = $("<div>").addClass("keret");
-            DIV.text(allapotLista[i]);
-
-            ARTICLE.append(DIV);
+        for (let i = 0; i < this.#allapotLista.length; i++) {
+            new Lampa( this.#allapotLista[i],i,ARTICLE)
         }
     }
 }
