@@ -1,4 +1,4 @@
-class Lampak {
+class Lampa {
     #allapot
     #id
     #divElem
@@ -6,26 +6,46 @@ class Lampak {
     constructor(allapot, id, szuloElem) {
         this.#allapot = allapot;
         this.#id = id;
-        this.#divElem = szuloElem;
-    }
 
-    setAllapot() {
-        divElem.addEventListener('click', () => {
-            id++;
-            this.#szinBeallit();
+
+        const DIV = $("<div>").addClass("keret kapcsolas");
+        DIV.text(allapot);
+        szuloElem.append(DIV);
+        this.#divElem = szuloElem.children("div:last-child");
+        //console.log(this.#divElem);
+        //console.log($("div"));
+        this.#szinBeallit();
+        this.#divElem.on("click", () => {
+            this.#kattintasTrigger("kapcsolas");
+            
         });
     }
 
-    #szinBeallit() {
-        if (allapot[id] === 1) {
-            divElem.style.backgroundColor = 'yellow';
+    setAllapot() {
+        if (this.#allapot == 0) {
+            this.#allapot = 1;
         } else {
-            divElem.style.backgroundColor = 'black';
-            id = 0;
+            this.#allapot = 0;
         }
+        this.#szinBeallit();
+
     }
 
-    
+    #szinBeallit() {
+        if (this.#allapot === 0) {
+            this.#divElem.css("background-color", "yellow");
+
+        } else {
+            this.#divElem.css("background-color", "white");
+        }
+
+    }
+
+    #kattintasTrigger(esemenyNev) {
+        const E = new CustomEvent(esemenyNev, { detail: this })
+        console.log("teszt");
+        window.dispatchEvent(E);
+    }
 }
 
-export default Lampak;
+export default Lampa;
