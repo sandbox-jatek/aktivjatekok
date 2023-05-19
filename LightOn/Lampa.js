@@ -8,13 +8,16 @@ class Lampa {
         this.#id = id;
 
 
-        const DIV = $("<div>").addClass("keret");
+        const DIV = $("<div>").addClass("keret kapcsolas");
         DIV.text(allapot);
         szuloElem.append(DIV);
         this.#divElem = szuloElem.children("div:last-child");
-        console.log(this.#divElem);
-        console.log($("div"));
+        //console.log(this.#divElem);
+        //console.log($("div"));
         this.#szinBeallit();
+        this.#divElem.on("kapcsolas", () => {
+            this.#kattintasTrigger("kapcsolas");
+        });
     }
 
     setAllapot() {
@@ -32,12 +35,16 @@ class Lampa {
             this.#divElem.css("background-color", "yellow");
 
         } else {
-            this.#divElem.css("background-color", "black");
+            this.#divElem.css("background-color", "white");
         }
 
     }
 
-
+    #kattintasTrigger(esemenyNev) {
+        const E = new CustomEvent(esemenyNev, { detail: this.#id })
+        console.log("teszt");
+        window.dispatchEvent(E);
+    }
 }
 
 export default Lampa;
