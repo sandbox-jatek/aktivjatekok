@@ -15,8 +15,9 @@ class Lampa {
         //console.log(this.#divElem);
         //console.log($("div"));
         this.#szinBeallit();
-        this.#divElem.on("kapcsolas", () => {
+        this.#divElem.on("click", () => {
             this.#kattintasTrigger("kapcsolas");
+            
         });
     }
 
@@ -41,7 +42,7 @@ class Lampa {
     }
 
     #kattintasTrigger(esemenyNev) {
-        const E = new CustomEvent(esemenyNev, { detail: this.#id })
+        const E = new CustomEvent(esemenyNev, { detail: this })
         console.log("teszt");
         window.dispatchEvent(E);
     }

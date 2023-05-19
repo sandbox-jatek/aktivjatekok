@@ -23,7 +23,8 @@ class JatekTer {
         this.#setAllapotListaMegjelenites();
 
         $(window).on("kapcsolas", (event) =>{
-            console.log(event.detail)
+            console.log(event.detail);
+            event.detail.setAllapot();
         })
     }
 
