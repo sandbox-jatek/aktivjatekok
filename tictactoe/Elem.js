@@ -1,13 +1,18 @@
 class Elem{
     #index;
+    #allapot = true;
     constructor(index,ART){
-        this.index=index;
+        this.#index=index;
         ART.append("<div class='elemek'><p> </p></div>");
         this.divElem = $("article div:last-child");
         this.tag = $('article div:last-child p');
 
-        this.divElem.on("click",()=>{
-            this.Katt();
+        this.divElem.on("click",() =>{
+            if ((this.#allapot)) {
+                this.Katt();
+                this.#allapot = false;
+            }
+            
         })
 
     }
@@ -21,6 +26,13 @@ class Elem{
     Katt(){
         const ESEMENY = new CustomEvent("elemKatt",{detail: this});
         window.dispatchEvent(ESEMENY);
+    }
+    NyertesKiir(nyert){
+        const BODY = $("body");
+        BODY.append( `asasddd`
+  );
+        this.tag = $('article div:last-child p');
+
     }
     
 }
