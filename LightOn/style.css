@@ -11,7 +11,9 @@ article {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
-
+p{
+    text-align: center;
+}
 .game-board {
     width: 500px;
     height: 500px;

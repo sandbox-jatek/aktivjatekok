@@ -26,6 +26,7 @@ class JatekTer {
             console.log(event.detail);
             event.detail.setAllapot();
         })
+
     }
 
     #setAllapotListaMegjelenites() {
@@ -34,6 +35,8 @@ class JatekTer {
             new Lampa( this.#allapotLista[i],i,ARTICLE)
         }
     }
+
+    
 }
 
 export default JatekTer;
