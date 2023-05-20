@@ -1,4 +1,5 @@
 class Kartya {
+  #egyediIndex
   #fajlnev;
   #allapot;
   #blokkolt;
@@ -6,9 +7,10 @@ class Kartya {
   #imgElem;
   static #szamlalo = 0;
 
-  constructor(fajlnev, szuloElem) {
+  constructor(fajlnev, szuloElem, i) {
+    this.#egyediIndex = i;
     this.#fajlnev = fajlnev;
-    szuloElem.append(`<div><img class="kartya" src="" alt="kep"></div>`);
+    szuloElem.append(`<div id=${this.#egyediIndex}><img class="kartya" src="" alt="kep"></div>`);
     this.#divElem = szuloElem.children("div:last-child");
     this.#imgElem = this.#divElem.children("img");
     this.#szamlaloMegjelenit();
@@ -33,6 +35,10 @@ class Kartya {
     $(window).on("gameUnBlocked", () => {
       this.#blokkolt = false;
     });
+  }
+
+  getEgyediIndex(){
+    return this.#egyediIndex
   }
 
   getFajlnev() {
