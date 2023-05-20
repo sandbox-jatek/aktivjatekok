@@ -4,12 +4,14 @@ class Kartya {
   #blokkolt;
   #divElem;
   #imgElem;
+  static #szamlalo = 0;
 
   constructor(fajlnev, szuloElem) {
     this.#fajlnev = fajlnev;
     szuloElem.append(`<div><img class="kartya" src="" alt="kep"></div>`);
     this.#divElem = szuloElem.children("div:last-child");
     this.#imgElem = this.#divElem.children("img");
+    this.#szamlaloMegjelenit();
 
     this.#allapot = false;
     this.#setLap();
@@ -19,6 +21,7 @@ class Kartya {
       if (this.#blokkolt) {
         return;
       }
+      this.#szamlalas();
       this.kattintas();
       this.#kattintasTrigger();
     });
@@ -54,6 +57,14 @@ class Kartya {
 
   eltuntet() {
     this.#divElem.css("visibility", "hidden");
+  }
+  #szamlalas() {
+    Kartya.#szamlalo++;
+    this.#szamlaloMegjelenit();
+  }
+  #szamlaloMegjelenit() {
+    const asideElem = $("aside h3");
+    asideElem.text(Kartya.#szamlalo);
   }
 }
 

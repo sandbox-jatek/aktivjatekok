@@ -1,13 +1,12 @@
 import Kartya from "./Kartya.js";
 
-
 class Jatekter {
   #kivalasztottKartyaLista = [];
   #sajatLista = [];
 
   constructor(lista) {
     this.#sajatLista = lista;
-    this.#init()
+    this.#init();
   }
 
   #init() {
@@ -20,7 +19,6 @@ class Jatekter {
 
     $(window).on("kattintas", (event) => {
       this.#kivalasztottKartyaLista.push(event.detail);
-      console.log(this.#kivalasztottKartyaLista);
       this.#ellenorzes();
     });
   }
@@ -49,7 +47,7 @@ class Jatekter {
         this.#kivalasztottKartyaLista.splice(0, 2);
 
         this.#TriggerUnBlocked();
-      }, 1000);
+      }, 2000);
     }
   }
   #TriggerBlocked() {

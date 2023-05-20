@@ -24,6 +24,7 @@ header {
   padding-left: 40px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-bottom: 10px;
 }
 
 .kartya {
@@ -39,4 +40,20 @@ header {
 
 footer{
   text-align: center;
+}
+
+.aside-board {
+  width: 400px;
+  height: 70px;
+  margin: 0 auto;
+  background-color: #34495e;
+  color: #fff;
+  border: 6px solid #2c3e50;
+  border-radius: 10px;
+  padding-left: 40px;
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+h3{
+  padding-top: 3px;
 }
