@@ -1,0 +1,65 @@
+<mxfile host="app.diagrams.net" modified="2023-05-21T17:10:55.079Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="-18IRv7I0DW9aWjQdQXz" version="21.3.2" type="device">
+  <diagram name="1 oldal" id="_RXf8JbPYij-DRxyNnbR">
+    <mxGraphModel dx="1434" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sloKMdHlNJ8OBQ3OfLgp-1" value="Karakter mozgatása ötlet" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=2;fontSize=36;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="149" y="110" width="530" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sloKMdHlNJ8OBQ3OfLgp-2" value="Karakter" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="560" y="270" width="160" height="348" as="geometry" />
+        </mxCell>
+        <mxCell id="sloKMdHlNJ8OBQ3OfLgp-3" value="-test&lt;br style=&quot;font-size: 14px;&quot;&gt;-balLab&lt;br style=&quot;font-size: 14px;&quot;&gt;-jobbLab" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Comic Sans MS;" vertex="1" parent="sloKMdHlNJ8OBQ3OfLgp-2">
+          <mxGeometry y="26" width="160" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="sloKMdHlNJ8OBQ3OfLgp-4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="sloKMdHlNJ8OBQ3OfLgp-2">
+          <mxGeometry y="90" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="sloKMdHlNJ8OBQ3OfLgp-5" value="constructor(): fejlécébe fog kerülni a balLab, jobbLab-szám értékekbe adom meg&lt;br style=&quot;font-size: 14px;&quot;&gt;&lt;br style=&quot;font-size: 14px;&quot;&gt;-setBalLab(): int típusú, pédányosítom a balLabat&lt;br style=&quot;font-size: 14px;&quot;&gt;&lt;br style=&quot;font-size: 14px;&quot;&gt;-setjobbLab(): int típusú, ugyan az mint a balLab" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Comic Sans MS;" vertex="1" parent="sloKMdHlNJ8OBQ3OfLgp-2">
+          <mxGeometry y="98" width="160" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="sloKMdHlNJ8OBQ3OfLgp-6" value="Mozgas" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="20" y="170" width="160" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="sloKMdHlNJ8OBQ3OfLgp-7" value="-jobbIrany&lt;br style=&quot;font-size: 14px;&quot;&gt;-ballIrany" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Comic Sans MS;" vertex="1" parent="sloKMdHlNJ8OBQ3OfLgp-6">
+          <mxGeometry y="26" width="160" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="sloKMdHlNJ8OBQ3OfLgp-8" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="sloKMdHlNJ8OBQ3OfLgp-6">
+          <mxGeometry y="70" width="160" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="sloKMdHlNJ8OBQ3OfLgp-9" value="constructor(): Ide fognak kerülni majd a meghívott metódusok, valamint a clic.on funkció is." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Comic Sans MS;fontSize=15;" vertex="1" parent="sloKMdHlNJ8OBQ3OfLgp-6">
+          <mxGeometry y="86" width="160" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="sloKMdHlNJ8OBQ3OfLgp-13" value="-setJobbIrany(): int típusú, példányosítom a jobbIranyt&lt;br style=&quot;font-size: 14px;&quot;&gt;&lt;br style=&quot;font-size: 14px;&quot;&gt;-setbalIrany(): ugyanaz a balIrannyal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Comic Sans MS;" vertex="1" parent="sloKMdHlNJ8OBQ3OfLgp-6">
+          <mxGeometry y="200" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="sloKMdHlNJ8OBQ3OfLgp-14" value="-iranyDontes(jobb, bal): a jobb-bal változók segítségével fogom azonosítani a jobb és bal irányt, egy egy vagy kétlépcsős elágazás fogja eldönteni, a constructorra fog hivatkozni mint privát metódus&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Comic Sans MS;" vertex="1" parent="sloKMdHlNJ8OBQ3OfLgp-6">
+          <mxGeometry y="320" width="160" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="sloKMdHlNJ8OBQ3OfLgp-10" value="A karakter konstruktor fog hivatkozni a Mozgas classra" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;exitX=0;exitY=0.053;exitDx=0;exitDy=0;exitPerimeter=0;fontSize=14;" edge="1" parent="1" source="sloKMdHlNJ8OBQ3OfLgp-2" target="sloKMdHlNJ8OBQ3OfLgp-6">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="370" y="390" as="sourcePoint" />
+            <mxPoint x="450" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sloKMdHlNJ8OBQ3OfLgp-15" value="TesztMain" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Comic Sans MS;" vertex="1" parent="1">
+          <mxGeometry x="600" y="660" width="160" height="188" as="geometry" />
+        </mxCell>
+        <mxCell id="sloKMdHlNJ8OBQ3OfLgp-16" value="$(): Ebbe fogjuk megjeleníteni a&amp;nbsp; megírt scriptjeinket, és ebbe fogjuk eldönteni hogy megfelelően működik-e a kódunk vagy sem, ebbe teszteljük" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Comic Sans MS;" vertex="1" parent="sloKMdHlNJ8OBQ3OfLgp-15">
+          <mxGeometry y="26" width="160" height="154" as="geometry" />
+        </mxCell>
+        <mxCell id="sloKMdHlNJ8OBQ3OfLgp-17" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="sloKMdHlNJ8OBQ3OfLgp-15">
+          <mxGeometry y="180" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="sloKMdHlNJ8OBQ3OfLgp-19" value="A mozgas konstruktor fog hivatkozni a tesztMainre" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;exitX=1.025;exitY=0.826;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.37;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=14;fontFamily=Comic Sans MS;" edge="1" parent="1" source="sloKMdHlNJ8OBQ3OfLgp-14" target="sloKMdHlNJ8OBQ3OfLgp-16">
+          <mxGeometry x="-0.0077" y="15" width="80" relative="1" as="geometry">
+            <mxPoint x="360" y="590" as="sourcePoint" />
+            <mxPoint x="440" y="590" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

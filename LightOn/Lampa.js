@@ -29,13 +29,16 @@ class Lampa {
         this.#allapot = 0;
       }
       this.#szinBeallit();
+     
     }
   
     #szinBeallit() {
       if (this.#allapot === 0) {
         this.#divElem.css("background-color", "yellow");
+        this.#divElem.css("color", "yellow");
       } else {
         this.#divElem.css("background-color", "white");
+        this.#divElem.css("color", "white");
       }
     }
   
