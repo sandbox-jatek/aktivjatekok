@@ -8,6 +8,5 @@ $(function () {
 });
 function Megjelenit(lista) {
   let sajatLista = lista.kepekLista;
-  console.log(sajatLista);
   new Jatekter(sajatLista);
 }

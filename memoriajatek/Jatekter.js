@@ -1,13 +1,13 @@
 import Kartya from "./Kartya.js";
 
-
 class Jatekter {
   #kivalasztottKartyaLista = [];
   #sajatLista = [];
+  #szamlalo = 0;
 
   constructor(lista) {
     this.#sajatLista = lista;
-    this.#init()
+    this.#init();
   }
 
   #init() {
@@ -15,12 +15,11 @@ class Jatekter {
     const szuloElem = $("article");
     szuloElem.empty();
     for (let index = 0; index < this.#sajatLista.length; index++) {
-      const kartya = new Kartya(this.#sajatLista[index], szuloElem);
+      const kartya = new Kartya(this.#sajatLista[index], szuloElem, index);
     }
 
     $(window).on("kattintas", (event) => {
       this.#kivalasztottKartyaLista.push(event.detail);
-      console.log(this.#kivalasztottKartyaLista);
       this.#ellenorzes();
     });
   }
@@ -31,27 +30,39 @@ class Jatekter {
   }
   #ellenorzes() {
     if (this.#kivalasztottKartyaLista.length == 2) {
-      this.#TriggerBlocked();
       if (
-        this.#kivalasztottKartyaLista[0].getFajlnev() ===
-        this.#kivalasztottKartyaLista[1].getFajlnev()
+        this.#kivalasztottKartyaLista[0].getEgyediIndex() !=
+        this.#kivalasztottKartyaLista[1].getEgyediIndex()
       ) {
-        this.#kivalasztottKartyaLista[0].eltuntet();
-        this.#kivalasztottKartyaLista[1].eltuntet();
-        this.#kivalasztottKartyaLista.splice(0, 2);
+        this.#TriggerBlocked();
+        if (
+          this.#kivalasztottKartyaLista[0].getFajlnev() ===
+          this.#kivalasztottKartyaLista[1].getFajlnev()
+        ) {
+          this.#kivalasztottKartyaLista[0].eltuntet();
+          this.#kivalasztottKartyaLista[1].eltuntet();
+          this.#kivalasztottKartyaLista.splice(0, 2);
+          this.#szamlalo++
 
-        this.#TriggerUnBlocked();
+          this.#TriggerUnBlocked();
+        } else {
+          setTimeout(() => {
+            this.#kivalasztottKartyaLista[0].kattintas();
+            this.#kivalasztottKartyaLista[1].kattintas();
+            this.#kivalasztottKartyaLista.splice(0, 2);
+
+            this.#TriggerUnBlocked();
+          }, 500);
+        }
+      } else{
+        this.#kivalasztottKartyaLista.splice(0, 2);
       }
-    } else {
-      setTimeout(() => {
-        this.#kivalasztottKartyaLista[0].kattintas();
-        this.#kivalasztottKartyaLista[1].kattintas();
-        this.#kivalasztottKartyaLista.splice(0, 2);
-
-        this.#TriggerUnBlocked();
-      }, 1000);
+    }
+    if(this.#szamlalo == 20){
+      alert("Gratulálok kivitted a játékot!");
     }
   }
+  
   #TriggerBlocked() {
     window.dispatchEvent(new Event("gameBlocked"));
   }
