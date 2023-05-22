@@ -5,7 +5,7 @@ class Jatek {
   constructor(allapot, szuloElem, i) {
     this.#index = i;
     this.#allapot = allapot;
-    const DIV = $("<div>").addClass("keret kapcsolas");
+    const DIV = $(`<div id=${this.#index}>`)
     DIV.text(allapot);
     szuloElem.append(DIV);
     this.#divElem = szuloElem.children("div:last-child");
