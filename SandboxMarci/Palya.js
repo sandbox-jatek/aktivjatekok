@@ -16,7 +16,7 @@ class Palya{
         for (let x = 0; x < xOldal.length; x++) {
            for (let y = 0; y < yOldal.length; y++) {
             DIV.textContent = `${xOldal[x]}${yOldal[y]}`; 
-            ARTICLE.appendChild(DIV);
+            ARTICLE.append(DIV);
            }
             
         }

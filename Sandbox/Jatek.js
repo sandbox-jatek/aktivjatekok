@@ -15,6 +15,10 @@ class Jatek {
         let esemeny = new CustomEvent("kattintas", { detail: this});
         window.dispatchEvent(esemeny);
       }
+      if (event.which === 68){
+        let esemeny = new CustomEvent("kattintas2", { detail: this});
+        window.dispatchEvent(esemeny);
+      }
     });
   }
 
@@ -45,6 +49,7 @@ class Jatek {
       this.#setAllapot(this.#allapot);
     }
   }
+
 }
 
 export default Jatek;
