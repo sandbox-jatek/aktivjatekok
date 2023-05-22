@@ -5,13 +5,11 @@ class Jatek {
   constructor(allapot, szuloElem, i) {
     this.#index = i;
     this.#allapot = allapot;
-    szuloElem.append(
-      `<div id=div id=${this.#index} style="${this.#setAllapot(
-        this.#allapot
-      )}">.</div>`
-    );
+    const DIV = $("<div>").addClass("keret kapcsolas");
+    DIV.text(allapot);
+    szuloElem.append(DIV);
     this.#divElem = szuloElem.children("div:last-child");
-    this.#setAllapot;
+    this.#setAllapot();
     $(window).on("keydown", () => {
       if (event.which === 65) {
         let esemeny = new CustomEvent("kattintas", { detail: this});
@@ -20,15 +18,15 @@ class Jatek {
     });
   }
 
-  #setAllapot(allapot) {
-    if (allapot == 0) {
-      return "background-color: aqua;";
-    } else if (allapot == "K") {
-      return "background:red;";
+  #setAllapot() {
+    if (this.#allapot == 0) {
+      this.#divElem.css("background-color", "yellow");
+    } else if (this.#allapot == "K") {
+      this.#divElem.css("background-color", "white");
     }
   }
 
-  getEgyediIndex(){
+  getIndex(){
     return this.#index
   }
 
@@ -38,8 +36,14 @@ class Jatek {
   }
 
   setMozgas(){
-    this.#allapot = "K";
-    this.#setAllapot(this.#allapot);
+    if(this.#allapot == 0){
+      this.#allapot = "K";
+      this.#setAllapot(this.#allapot);
+    }
+    else{
+      this.#allapot = "0";
+      this.#setAllapot(this.#allapot);
+    }
   }
 }
 

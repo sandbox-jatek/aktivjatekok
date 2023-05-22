@@ -3,6 +3,7 @@ import Jatek from "./Jatek.js";
 class Jatekter {
   jatek = ["0", "0", "K", "0", "0"];
   #karakter = [];
+  #lepes = false;
   constructor() {
     this.#init();
     $(window).on("kattintas", (event) => {
@@ -20,8 +21,11 @@ class Jatekter {
 
   #mozgas() {
     for (let i = 0; i < this.#karakter.length; i++) {
-      if (this.#karakter[i].getAllapot() == "K") {
-        this.#karakter[1].setMozgas();
+      if (this.#karakter[i].getAllapot() == "K" && this.#lepes == false) {
+        this.#lepes = true;
+        console.log(this.#lepes);
+        this.#karakter[i-1].setMozgas();
+        this.#karakter[i].setMozgas();
       }
     }
   }
