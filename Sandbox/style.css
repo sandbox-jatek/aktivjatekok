@@ -1,0 +1,16 @@
+body {
+    background-color: aquamarine;
+    max-width: 750px;
+    margin: auto;
+    padding: 10px;
+  }
+
+article{
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+}
+div{
+    height: 50px;
+    width: 50px;
+}

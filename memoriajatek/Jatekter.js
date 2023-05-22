@@ -19,7 +19,9 @@ class Jatekter {
     }
 
     $(window).on("kattintas", (event) => {
+      console.log(event.detail);
       this.#kivalasztottKartyaLista.push(event.detail);
+      console.log(this.#kivalasztottKartyaLista);
       this.#ellenorzes();
     });
   }
@@ -29,6 +31,7 @@ class Jatekter {
     });
   }
   #ellenorzes() {
+    console.log(this.#kivalasztottKartyaLista[0].getEgyediIndex());
     if (this.#kivalasztottKartyaLista.length == 2) {
       if (
         this.#kivalasztottKartyaLista[0].getEgyediIndex() !=
