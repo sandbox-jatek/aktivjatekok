@@ -2,14 +2,16 @@ import Jatek from "./Jatek.js";
 
 class Jatekter {
   #jatek = [
-    ["0", "0", "0", "0", "0", "0", "0"],
-    ["0", "0", "0", "0", "0", "0", "0"],
-    ["0", "0", "0", "0", "0", "0", "0"],
-    ["0", "0", "0", "0", "0", "0", "0"],
+    ["0", "0", "0", "0", "0", "0", "0","0","0","0"],
+    ["0", "0", "0", "0", "0", "0", "0","0","0","0"],
+    ["0", "0", "0", "0", "0", "0", "0","0","0","0"],
+    ["0", "0", "0", "0", "0", "0", "0","0","0","0"],
   ];
   #JatekterDb = 0;
   #foldszint = this.#jatek.length - 1;
   #tarhely = [];
+
+  #szamlalo = 0;
   constructor() {
     this.#spawn();
     this.#init();
@@ -31,6 +33,7 @@ class Jatekter {
       this.#tarhely.push(event.detail);
       if (this.#tarhely.length == this.#JatekterDb) {
         this.fel(this.#tarhely);
+        this.le(this.#tarhely);
       }
     });
   }
@@ -55,12 +58,11 @@ class Jatekter {
   balra(adat) {
     for (let i = 0; i < adat.length; i++) {
       if (adat[i].getAllapot() == "K") {
-        if(adat[i].getX() != 0){
+        if (adat[i].getX() != 0) {
           this.#tarhely[i].setMozgas();
           this.#tarhely[i - 1].setMozgas();
           this.#tarhely = $().empty();
-        }
-        else{
+        } else {
           this.#tarhely = $().empty();
         }
       }
@@ -69,28 +71,39 @@ class Jatekter {
   jobbra(adat) {
     for (let i = 0; i < adat.length; i++) {
       if (adat[i].getAllapot() == "K") {
-        if(adat[i].getX() != this.#jatek[this.#foldszint].length-1){
+        if (adat[i].getX() != this.#jatek[this.#foldszint].length - 1) {
           this.#tarhely[i].setMozgas();
           this.#tarhely[i + 1].setMozgas();
           this.#tarhely = $().empty();
-        }
-        else{
+        } else {
           this.#tarhely = $().empty();
         }
       }
     }
   }
-  fel(adat){
-    console.log()
+  fel(adat) {
     for (let i = 0; i < adat.length; i++) {
       if (adat[i].getAllapot() == "K") {
-        if(adat[i].getY() != 0){
+        if (adat[i].getY() != 0 && this.#szamlalo == 0) {
           this.#tarhely[i].setMozgas();
-          this.#tarhely[i-this.#jatek[this.#foldszint].length].setMozgas();
+          this.#tarhely[i - this.#jatek[this.#foldszint].length].setMozgas();
+        } else {
           this.#tarhely = $().empty();
         }
-        else{
-          this.#tarhely = $().empty();
+      }
+    }
+  }
+
+  le(adat) {
+    for (let i = 0; i < adat.length; i++) {
+      if (adat[i].getAllapot() == "K") {
+        let szam = i + this.#jatek[this.#foldszint].length;
+        if(this.#tarhely[szam].getAllapot() == 0){
+          setTimeout(() => {
+            this.#tarhely[i].setMozgas();
+            this.#tarhely[i + this.#jatek[this.#foldszint].length].setMozgas();
+            this.#tarhely = $().empty();
+          },300)
         }
       }
     }
