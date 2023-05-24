@@ -9,12 +9,12 @@ class Palya {
 
     #tablaMegjelenitese(xOldal, yOldal) {
         const ARTICLE = $("article");
-        for (let x = 0; x < xOldal.length; x++) {
-            for (let y = 0; y < yOldal.length; y++) {
-                const DIV = $("<div></div>"); // div elem létrehozása jQuery-vel
-                DIV.text(`${xOldal[x]}${yOldal[y]}`);
-                ARTICLE.append(DIV);
-            }
+        for (let y = 3; y < yOldal.length; y++) {
+          for (let x = 1; x < xOldal.length; x++) {
+            const DIV = $("<div></div>");
+            DIV.css("background-color", "green");
+            ARTICLE.append(DIV);
+          }
         }
     }
 }
