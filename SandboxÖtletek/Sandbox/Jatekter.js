@@ -2,10 +2,10 @@ import Jatek from "./Jatek.js";
 
 class Jatekter {
   #jatek = [
-    ["0", "0", "0", "0", "0", "0", "0","0","0","0"],
-    ["0", "0", "0", "0", "0", "0", "0","0","0","0"],
-    ["0", "0", "0", "0", "0", "0", "0","0","0","0"],
-    ["0", "0", "0", "0", "0", "0", "0","0","0","0"],
+    ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
+    ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
+    ["1", "1", "1", "0", "0", "0", "0", "1", "1", "1"],
+    ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1"],
   ];
   #JatekterDb = 0;
   #foldszint = this.#jatek.length - 1;
@@ -49,16 +49,22 @@ class Jatekter {
 
   #spawn() {
     let szam = Math.floor(Math.random() * this.#jatek[this.#foldszint].length);
-    for (let i = 0; i < this.#jatek[this.#foldszint].length; i++) {
-      if (i == szam) {
-        this.#jatek[this.#foldszint][i] = "K";
+    let spawn = false;
+    let spawnHely = 0;
+    while (spawn == false) {
+      if (this.#jatek[this.#foldszint - spawnHely][szam] == 0) {
+        this.#jatek[this.#foldszint - spawnHely][szam] = "K";
+        spawn = true;
+      } else {
+        spawnHely++;
+        szam = Math.floor(Math.random() * this.#jatek[this.#foldszint].length);
       }
     }
   }
   balra(adat) {
     for (let i = 0; i < adat.length; i++) {
       if (adat[i].getAllapot() == "K") {
-        if (adat[i].getX() != 0) {
+        if (adat[i].getX() != 0 && this.#tarhely[i - 1].getAllapot() == 0) {
           this.#tarhely[i].setMozgas();
           this.#tarhely[i - 1].setMozgas();
           this.#tarhely = $().empty();
@@ -71,7 +77,10 @@ class Jatekter {
   jobbra(adat) {
     for (let i = 0; i < adat.length; i++) {
       if (adat[i].getAllapot() == "K") {
-        if (adat[i].getX() != this.#jatek[this.#foldszint].length - 1) {
+        if (
+          adat[i].getX() != this.#jatek[this.#foldszint].length - 1 &&
+          this.#tarhely[i + 1].getAllapot() == 0
+        ) {
           this.#tarhely[i].setMozgas();
           this.#tarhely[i + 1].setMozgas();
           this.#tarhely = $().empty();
@@ -84,7 +93,12 @@ class Jatekter {
   fel(adat) {
     for (let i = 0; i < adat.length; i++) {
       if (adat[i].getAllapot() == "K") {
-        if (adat[i].getY() != 0 && this.#szamlalo == 0) {
+        if (
+          adat[i].getY() != 0 &&
+          this.#szamlalo == 0 &&
+          this.#tarhely[i - this.#jatek[this.#foldszint].length].getAllapot() ==
+            0
+        ) {
           this.#tarhely[i].setMozgas();
           this.#tarhely[i - this.#jatek[this.#foldszint].length].setMozgas();
         } else {
@@ -95,15 +109,16 @@ class Jatekter {
   }
 
   le(adat) {
+    let lentVan = false;
     for (let i = 0; i < adat.length; i++) {
       if (adat[i].getAllapot() == "K") {
         let szam = i + this.#jatek[this.#foldszint].length;
-        if(this.#tarhely[szam].getAllapot() == 0){
+        if (this.#tarhely[szam].getAllapot() == 0) {
           setTimeout(() => {
             this.#tarhely[i].setMozgas();
             this.#tarhely[i + this.#jatek[this.#foldszint].length].setMozgas();
             this.#tarhely = $().empty();
-          },300)
+          }, 300);
         }
       }
     }
