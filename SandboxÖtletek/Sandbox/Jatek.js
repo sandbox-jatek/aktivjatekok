@@ -12,20 +12,7 @@ class Jatek {
     szuloElem.append(DIV);
     this.#divElem = szuloElem.children("div:last-child");
     this.#setAllapot();
-    $(window).on("keydown", () => {
-      if (event.which === 65 || event.which === 37) {
-        let esemeny = new CustomEvent("balra", { detail: this });
-        window.dispatchEvent(esemeny);
-      }
-      if (event.which === 68 || event.which === 39) {
-        let esemeny = new CustomEvent("jobbra", { detail: this });
-        window.dispatchEvent(esemeny);
-      }
-      if (event.which === 87 || event.which === 38) {
-        let esemeny = new CustomEvent("fel", { detail: this });
-        window.dispatchEvent(esemeny);
-      }
-    });
+    this.mozgatas();
   }
 
   #setAllapot() {
@@ -61,6 +48,32 @@ class Jatek {
       this.#allapot = "0";
       this.#setAllapot(this.#allapot);
     }
+  }
+
+  mozgatas() {
+    $(window).on("keydown", () => {
+      if (event.which === 65 || event.which === 37) {
+        let esemeny = new CustomEvent("balra", { detail: this });
+        window.dispatchEvent(esemeny);
+      }
+      if (event.which === 68 || event.which === 39) {
+        let esemeny = new CustomEvent("jobbra", { detail: this });
+        window.dispatchEvent(esemeny);
+      }
+      if (event.which === 87 || event.which === 38) {
+        let esemeny = new CustomEvent("fel", { detail: this });
+        window.dispatchEvent(esemeny);
+      }
+    });
+  }
+
+  mozgatasjobbra() {
+    $(window).on("keydown", () => {
+      if (event.which === 68 || event.which === 39) {
+        let esemeny = new CustomEvent("jobbra", { detail: this });
+        window.dispatchEvent(esemeny);
+      }
+    });
   }
 }
 
