@@ -1,22 +1,35 @@
-class Palya {
-    #yTengely = [];
-    #xTengely = [];
-    constructor() {
-        this.#yTengely = new Array(15).fill(0).map((_, i) => i + 1);
-        this.#xTengely = new Array(15).fill(0).map((_, i) => i + 1);
-        this.#tablaMegjelenitese(this.#xTengely, this.#yTengely);
-    }
+import Blokle from "./Blokle.js";
 
-    #tablaMegjelenitese(xOldal, yOldal) {
-        const ARTICLE = $("article");
-        for (let y = 3; y < yOldal.length; y++) {
-          for (let x = 1; x < xOldal.length; x++) {
-            const DIV = $("<div></div>");
-            DIV.css("background-color", "green");
-            ARTICLE.append(DIV);
-          }
-        }
+class Palya {
+  #palyaLista = [
+    [1, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 1, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0,],
+  ];
+
+  constructor() {
+    this.#tablaMegjelenitese(this.#palyaLista[0].length, this.#palyaLista.length);
+
+  }
+
+  #tablaMegjelenitese(xOldal, yOldal) {
+
+
+    let id = 0;
+    const szuloElem = $("article");
+    for (let y = 0; y < yOldal; y++) {
+      for (let x = 0; x < xOldal; x++) {
+
+        const blokle = new Blokle(id,this.#palyaLista[x][y],szuloElem);
+        id += 1;
+      }
     }
+  }
 }
 
 export default Palya;
