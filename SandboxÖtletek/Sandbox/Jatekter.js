@@ -11,8 +11,8 @@ class Jatekter {
   #foldszint = this.#jatek.length - 1;
   #tarhely = [];
   #spawnHely = 0;
-  #boolean = false;
   #szamlalo = 0;
+  #boolean = false;
   constructor() {
     this.#spawn();
     this.#init();
@@ -36,6 +36,7 @@ class Jatekter {
         this.fel();
       }
     });
+
   }
 
   #init() {
@@ -71,9 +72,9 @@ class Jatekter {
   }
 
   balra() {
-    this.#boolean = false;
     for (let i = 0; i < this.#tarhely.length; i++) {
-      if (this.#tarhely[i].getAllapot() == "K") {
+      if (this.#tarhely[i].getAllapot() == "K" && this.#boolean == false) {
+        console.log("balra");
         if (
           this.#tarhely[i].getX() != 0 &&
           this.#tarhely[i - 1].getAllapot() == 0
@@ -89,6 +90,7 @@ class Jatekter {
   }
 
   jobbra() {
+    console.log("jobbra")
     for (let i = 0; i < this.#tarhely.length; i++) {
       if (this.#tarhely[i].getAllapot() == "K") {
         if (
@@ -105,7 +107,7 @@ class Jatekter {
     }
   }
   fel() {
-    this.#boolean = true;
+    console.log("fel")
     for (let i = 0; i < this.#tarhely.length; i++) {
       if (this.#tarhely[i].getAllapot() == "K") {
         if (
@@ -116,33 +118,13 @@ class Jatekter {
         ) {
           this.#tarhely[i].setMozgas();
           this.#tarhely[i - this.#jatek[this.#foldszint].length].setMozgas();
-          $(window).on("keydown", () => {
-            if (
-              event.which === 68 ||
-              (event.which === 39 && this.#boolean == true)
-            ) {
-              this.jobbra();
-            }
-          });
-          $(window).on("keydown", () => {
-            if (
-              event.which === 65 ||
-              (event.which === 37 && this.#boolean == true)
-            ) {
-              this.#boolean = false;
-              this.#tarhely[
-                i - this.#jatek[this.#foldszint].length - 1
-              ].setMozgas();
-
-              this.#tarhely[
-                i - this.#jatek[this.#foldszint].length
-              ].setMozgas();
-
-              setTimeout(() => {
-                this.#tarhely[i - 1].setMozgas();
-              }, 500);
-            }
-          });
+          this.#boolean = true;
+          if(this.#boolean == true){
+            console.log("felbal")
+            this.#tarhely[i - this.#jatek[this.#foldszint-1].length].balra();
+            this.#tarhely[i - this.#jatek[this.#foldszint-1].length-1].balra();
+            this.#boolean = false;
+          }
           setTimeout(() => {
             this.le();
           }, 500);
@@ -154,6 +136,7 @@ class Jatekter {
   }
 
   le() {
+    console.log("le")
     for (let i = 0; i < this.#tarhely.length; i++) {
       if (this.#tarhely[i].getAllapot() == "K") {
         let szam = i + this.#jatek[this.#foldszint].length;
@@ -169,6 +152,7 @@ class Jatekter {
   autole(i) {
     let szam = i + this.#jatek[this.#foldszint].length - 1;
     if (this.#tarhely[szam].getAllapot() == 0) {
+      console.log("autole")
       setTimeout(() => {
         this.#tarhely[i - 1].setMozgas();
         this.#tarhely[szam].setMozgas();
@@ -178,6 +162,7 @@ class Jatekter {
       this.#tarhely = $().empty();
     }
   }
+
 }
 
 export default Jatekter;
