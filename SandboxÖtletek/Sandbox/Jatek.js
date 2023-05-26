@@ -12,20 +12,10 @@ class Jatek {
     szuloElem.append(DIV);
     this.#divElem = szuloElem.children("div:last-child");
     this.#setAllapot();
-    $(window).on("keydown", () => {
-      if (event.which === 65 || event.which === 37) {
-        let esemeny = new CustomEvent("balra", { detail: this });
-        window.dispatchEvent(esemeny);
-      }
-      if (event.which === 68 || event.which === 39) {
-        let esemeny = new CustomEvent("jobbra", { detail: this });
-        window.dispatchEvent(esemeny);
-      }
-      if (event.which === 87 || event.which === 38) {
-        let esemeny = new CustomEvent("fel", { detail: this });
-        window.dispatchEvent(esemeny);
-      }
-    });
+
+    this.balra();
+    this.jobbra();
+    this.fel();
   }
 
   #setAllapot() {
@@ -62,6 +52,36 @@ class Jatek {
       this.#setAllapot(this.#allapot);
     }
   }
+
+
+
+  balra() {
+    $(window).on("keydown", () => {
+      if (event.which === 65 || event.which === 37) {
+        let esemeny = new CustomEvent("balra", { detail: this });
+        window.dispatchEvent(esemeny);
+      }
+    });
+  }
+
+  jobbra() {
+    $(window).on("keydown", () => {
+      if (event.which === 68 || event.which === 39) {
+        let esemeny = new CustomEvent("jobbra", { detail: this });
+        window.dispatchEvent(esemeny);
+      }
+    });
+  }
+
+  fel(){
+    $(window).on("keydown", () => {
+      if (event.which === 87 || event.which === 38) {
+        let esemeny = new CustomEvent("fel", { detail: this });
+        window.dispatchEvent(esemeny);
+      }
+    });
+  }
+
 }
 
 export default Jatek;
