@@ -1,40 +1,37 @@
-class Blokle {
-    blok;
+
+class Inventory {
+    szinkod;
     #divElem;
-    #eredetiHatterszin;
-    #eredetiSzovegszin;
     #egyediIndex;
 
-    constructor(id, blok, szuloElem) {
+    constructor(id, szinkod, szuloElem) {
         this.#egyediIndex = 0;
-        blok = 0;
-
-        this.blok = blok;
-
+        this.szinkod = szinkod;
         this.id = id;
-
+        szinkod = id;
         const DIV = $("<div>").addClass("keret kapcsolas");
-        DIV.text(this.blok);
+        DIV.text(this.szinkod);
         szuloElem.append(DIV);
         this.#divElem = szuloElem.children("div:last-child");
 
-        this.#eredetiHatterszin = this.#divElem.css("background-color");
-        this.#eredetiSzovegszin = this.#divElem.css("color");
-
-        this.blokLerakEsFelvessz();
-        this.#divElem.on("click", () => {
-            console.log(this.id)
-            this.kattintasTrigger("kapcsolas");
-            this.setBlok();
-            this.blokLerakEsFelvessz();
-            
-
-        });
-
+        console.log(this.id)
+       // this.kattintasTrigger("kapcsolas");
+        this.#szinAtvetel();
+        this.#alapSzinek(szinkod);
+        
     }
 
-    szinbeallit(szinkod){
-        switch (szinkod) {
+    #szinAtvetel(){
+        
+        this.#divElem.on("click", () => {
+            this.kattintasTrigger("szinvalasztas");
+
+        });
+    }
+
+    #alapSzinek(id) {
+        console.log(id);
+        switch (id) {
             case 0:
                 console.log(this.#divElem);
                 this.#divElem.css("background-color", "red");
@@ -53,26 +50,9 @@ class Blokle {
         }
     }
 
-    blokLerakEsFelvessz() {
-        if (this.blok === 2) {
-            this.szinbeallit(this.blok);
-        } else {
-            this.#divElem.css("background-color", "white");
-            this.#divElem.css("color", "white");
-        }
-    }
-
-    setBlok() {
-        if (this.blok === 0) {
-            this.blok = 1;
-        } else {
-            this.blok = 0;
-        }
-    }
 
     kattintasTrigger(esemenyNev) {
         const E = new CustomEvent(esemenyNev, { detail: this });
-        console.log("teszt");
         window.dispatchEvent(E);
     }
 
@@ -81,4 +61,4 @@ class Blokle {
     }
 }
 
-export default Blokle;
+export default Inventory;

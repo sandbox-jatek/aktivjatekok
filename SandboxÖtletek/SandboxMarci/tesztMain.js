@@ -1,5 +1,6 @@
 import Palya from "./Palya.js";
-$(function(kiir) {
+import Inventory from "./Inventory.js";
+$(function(kiir, kiirInventory) {
     kiir = new Palya();
-
+    //kiirInventory = new Inventory();
 })
