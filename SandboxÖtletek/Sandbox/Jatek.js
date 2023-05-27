@@ -29,6 +29,16 @@ class Jatek {
       this.#divElem.css("background-color", "white");
       this.#divElem.css("color", "white");
     }
+    else if (this.#allapot == "B") {
+      this.#divElem.css("background-color", "turquoise");
+      this.#divElem.css("color", "turquoise");
+    }
+    else if (this.#allapot == "2") {
+      this.#divElem.css("background-color", "grey");
+      this.#divElem.css("color", "grey");
+    }
+
+
   }
 
   getY() {
@@ -73,7 +83,7 @@ class Jatek {
     });
   }
 
-  fel(){
+  fel() {
     $(window).on("keydown", () => {
       if (event.which === 87 || event.which === 38) {
         let esemeny = new CustomEvent("fel", { detail: this });
