@@ -1,4 +1,4 @@
-class Jatek {
+class Block {
   #allapot;
   #y;
   #x;
@@ -13,9 +13,7 @@ class Jatek {
     this.#divElem = szuloElem.children("div:last-child");
     this.#setAllapot();
 
-    this.balra();
-    this.jobbra();
-    this.fel();
+    this.mozgas()
   }
 
   #setAllapot() {
@@ -63,35 +61,58 @@ class Jatek {
     }
   }
 
-
-
-  balra() {
+  mozgas() {
     $(window).on("keydown", () => {
       if (event.which === 65 || event.which === 37) {
         let esemeny = new CustomEvent("balra", { detail: this });
         window.dispatchEvent(esemeny);
       }
     });
-  }
-
-  jobbra() {
     $(window).on("keydown", () => {
       if (event.which === 68 || event.which === 39) {
         let esemeny = new CustomEvent("jobbra", { detail: this });
         window.dispatchEvent(esemeny);
       }
     });
-  }
-
-  fel() {
     $(window).on("keydown", () => {
       if (event.which === 87 || event.which === 38) {
         let esemeny = new CustomEvent("fel", { detail: this });
         window.dispatchEvent(esemeny);
       }
     });
+
+    this.#divElem.on("click", () => {
+      this.#kattintasTrigger()
+    });
+    $(window).on("click", () => {
+      this.#kattintasTrigger2()
+    });
+  }
+
+  #kattintasTrigger() {
+    let esemeny = new CustomEvent("kattintas", { detail: this });
+    window.dispatchEvent(esemeny);
+  }
+
+  #kattintasTrigger2() {
+    let esemeny = new CustomEvent("kattintas2", { detail: this });
+    window.dispatchEvent(esemeny);
+  }
+
+  setBlock() {
+    if (this.#allapot == 0) {
+      this.#allapot = 1;
+      this.#setAllapot(this.#allapot);
+    }
+    else if(this.#allapot == "B"){
+      console.log("Ne üsd ki!")
+    }
+     else {
+      this.#allapot = 0;
+      this.#setAllapot(this.#allapot);
+    }
   }
 
 }
 
-export default Jatek;
+export default Block;
