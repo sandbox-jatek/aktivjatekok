@@ -10,13 +10,14 @@ body {
     margin: 0px;
     display: flex;
     flex-wrap: wrap;
+    border-radius: 5px;
+    border: 2px solid black;
   }
   article div {
     height: 50px;
     width: 50px;
     text-align: center;
     margin: 0px;
-    border: 2px solid black;
   }
 
   aside div{

@@ -2,14 +2,25 @@ import Blokle from "./Blokle.js";
 import Inventory from "./Inventory.js";
 class Palya {
   #palyaLista = [
-    [1, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0,],
-    [0, 1, 0, 0, 0, 0, 0, 0,],
-    [0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0,],
   ];
 
   #inventory = [1, 2, 3, 4];
@@ -18,14 +29,17 @@ class Palya {
   constructor() {
     this.#tablaMegjelenitese(this.#palyaLista[0].length, this.#palyaLista.length);
     this.#inventoryMegjelenitese(this.#inventory.length);
-    this.#aktualisSzin = 1;
+    
+    
     $(window).on("szinvalasztas", (event) => {
       console.log(event.detail.szinkod)
       this.#aktualisSzin = event.detail.szinkod;
     });
 
     $(window).on("kapcsolas", (event) => {
+      this.#palyaLista = this.#palyaLista;
       event.detail.szinbeallit(this.#aktualisSzin);
+      
     })
   }
 
