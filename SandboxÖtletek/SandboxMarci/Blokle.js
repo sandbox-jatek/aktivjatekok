@@ -27,13 +27,13 @@ class Blokle {
             this.kattintasTrigger("kapcsolas");
             this.setBlok();
             this.blokLerakEsFelvessz();
-            
+
 
         });
 
     }
 
-    szinbeallit(szinkod){
+    szinbeallit(szinkod) {
         switch (szinkod) {
             case 0:
                 console.log(this.#divElem);
@@ -54,31 +54,37 @@ class Blokle {
     }
 
     blokLerakEsFelvessz() {
+        if (this.blok === 0) {
+            this.szinbeallit(this.blok);
+        }
+        if (this.blok === 1) {
+            this.szinbeallit(this.blok);
+        }
         if (this.blok === 2) {
             this.szinbeallit(this.blok);
-        } else {
-            this.#divElem.css("background-color", "white");
-            this.#divElem.css("color", "white");
+        }
+        if (this.blok === 3) {
+            this.szinbeallit(this.blok);
         }
     }
 
-    setBlok() {
-        if (this.blok === 0) {
-            this.blok = 1;
-        } else {
-            this.blok = 0;
+        setBlok() {
+            if (this.blok === 0) {
+                this.blok = 1;
+            } else {
+                this.blok = 0;
+            }
+        }
+
+        kattintasTrigger(esemenyNev) {
+            const E = new CustomEvent(esemenyNev, { detail: this });
+            console.log("teszt");
+            window.dispatchEvent(E);
+        }
+
+        getEgyediIndex() {
+            return this.#egyediIndex;
         }
     }
-
-    kattintasTrigger(esemenyNev) {
-        const E = new CustomEvent(esemenyNev, { detail: this });
-        console.log("teszt");
-        window.dispatchEvent(E);
-    }
-
-    getEgyediIndex() {
-        return this.#egyediIndex;
-    }
-}
 
 export default Blokle;
