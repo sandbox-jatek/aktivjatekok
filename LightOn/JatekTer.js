@@ -21,23 +21,27 @@ class JatekTer {
         }
 
         this.#setAllapotListaMegjelenites();
+        
 
         $(window).on("kapcsolas", (event) => {
             console.log(event.detail);
             event.detail.setAllapot();
+            this.szomszedokKeresese(this.#db);
+            
         });
 
     }
 
     #setAllapotListaMegjelenites() {
-        const ARTICLE = $("article");   
+        const ARTICLE = $("article");  
+        ARTICLE.empty(); 
         for (let i = 0; i < this.#allapotLista.length; i++) {
             new Lampa(this.#allapotLista[i], i, ARTICLE);
         }
        
     }
 
-    /*szomszedokKeresese(id) {
+    szomszedokKeresese(id) {
         const sorIndex = Math.floor(id / this.#db);
         const oszlopIndex = id % this.#db;
         
@@ -62,7 +66,7 @@ class JatekTer {
 
 
 
-    }*/
+    }
 }
 
 
