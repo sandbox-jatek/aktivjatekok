@@ -30,7 +30,9 @@ class Jatekter {
   #kivalasztottBlockTarhely = [];
   #kivalasztottBlockHely = [];
   #inventoryadat = [];
-  constructor() {
+  #kepekLista
+  constructor(kepekLista) {
+    this.#kepekLista = kepekLista
     this.#spawn();
     this.#init();
     $(window).on("balra", (event) => {
@@ -79,7 +81,7 @@ class Jatekter {
     for (let i = 0; i < this.#jatek.length; i++) {
       this.#JatekterDb += this.#jatek[i].length;
       for (let j = 0; j < this.#jatek[i].length; j++) {
-        const jatek = new Block(this.#jatek[i][j], szuloElem, i, j);
+        const jatek = new Block(this.#jatek[i][j], szuloElem, i, j, this.#kepekLista);
       }
     }
     const asideElem = $("aside");

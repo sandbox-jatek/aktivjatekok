@@ -58,6 +58,10 @@ footer{
     ;
   }
 }
+img{
+  height: 50px;
+  width: 50px;
+}
 
 #error-message {
   display: none;
