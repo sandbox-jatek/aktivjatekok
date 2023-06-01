@@ -3,21 +3,26 @@ class Inventory {
     #szuloElem;
     #i;
     #divElem;
-    constructor(allapot, szuloElem, i) {
+    #imgElem;
+    #kepek = [];
+    constructor(allapot, szuloElem, i, kepek) {
+        this.#kepek = kepek;
         this.#allapot = allapot;
         this.#szuloElem = szuloElem;
         this.#i = i;
+        const IMG = $(`<img src="" alt="kep1">`);
         const DIV = $(`<div id=inv>`);
-        DIV.text(allapot);
+        DIV.append(IMG);
         szuloElem.append(DIV);
         this.#divElem = szuloElem.children("div:last-child");
+        this.#imgElem = this.#divElem.children("img");
         this.#setAllapot();
         this.#esemenyTrigger();
     }
 
     #setAllapot() {
-        if (this.#allapot == "0") {
-            this.#divElem.css("background-color", "bisque");
+        if (this.#allapot == 0) {
+            this.#imgElem.attr("src", this.#kepek[9]);
         }
     }
 
@@ -28,7 +33,6 @@ class Inventory {
     #esemenyTrigger(){
         let esemeny = new CustomEvent("adat", { detail: this });
         window.dispatchEvent(esemeny);
-        console.log(esemeny)
     }
 }
 

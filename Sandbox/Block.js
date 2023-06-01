@@ -3,10 +3,9 @@ class Block {
   #y;
   #x;
   #divElem;
-  #imgElem
-  #kepek = []
+  #imgElem;
+  #kepek = [];
   constructor(allapot, szuloElem, y, x, kepek) {
-    console.log(kepek[0])
     this.#kepek = kepek;
     this.#y = y;
     this.#x = x;
@@ -19,7 +18,7 @@ class Block {
     this.#imgElem = this.#divElem.children("img");
     this.#setAllapot();
 
-    this.mozgas()
+    this.mozgas();
   }
 
   #setAllapot() {
@@ -28,17 +27,22 @@ class Block {
     } else if (this.#allapot == 1) {
       this.#imgElem.attr("src", this.#kepek[0]);
     } else if (this.#allapot == "K") {
-      this.#imgElem.attr("src", this.#kepek[2]);
-    }
-    else if (this.#allapot == "B") {
-      this.#divElem.css("background-color", "turquoise");
-      this.#divElem.css("color", "turquoise");
-    }
-    else if (this.#allapot == "2") {
+      this.#imgElem.attr("src", this.#kepek[5]);
+    } else if (this.#allapot == "B") {
+      this.#imgElem.attr("src", this.#kepek[4]);
+    } else if (this.#allapot == 2) {
       this.#imgElem.attr("src", this.#kepek[3]);
+    } else if (this.#allapot == 3) {
+      this.#imgElem.attr("src", this.#kepek[2]);
+    } else if (this.#allapot == 4) {
+      this.#imgElem.attr("src", this.#kepek[6]);
     }
-
-
+    else if (this.#allapot == 5) {
+      this.#imgElem.attr("src", this.#kepek[7]);
+    }
+    else if (this.#allapot == 6) {
+      this.#imgElem.attr("src", this.#kepek[8]);
+    }
   }
 
   getY() {
@@ -84,10 +88,10 @@ class Block {
     });
 
     this.#divElem.on("click", () => {
-      this.#kattintasTrigger()
+      this.#kattintasTrigger();
     });
     $(window).on("click", () => {
-      this.#kattintasTrigger2()
+      this.#kattintasTrigger2();
     });
   }
 
@@ -105,16 +109,20 @@ class Block {
     if (this.#allapot == 0) {
       this.#allapot = 1;
       this.#setAllapot(this.#allapot);
-    }
-    else if(this.#allapot == "B"){
-      console.log("Ne üsd ki!")
-    }
-     else {
+    } else if (this.#allapot == "B") {
+      console.log("Ne üsd ki!");
+    } else {
       this.#allapot = 0;
       this.#setAllapot(this.#allapot);
     }
   }
 
+  setFu() {
+    if (this.#allapot == 1) {
+      this.#allapot = 3;
+      this.#setAllapot(this.#allapot);
+    }
+  }
 }
 
 export default Block;
