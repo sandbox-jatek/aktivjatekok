@@ -1,12 +1,15 @@
 import Elem from "./Elem.js";
+import Info from "./info.js";
 class Jatekter {
   lista = [];
   #lepes = 0;
+  #nyertes = "";
   //https://github.com/csefikatalin/harcos_varazslo
-  //felugro elem nézd meg 
+  //felugro elem nézd meg
   constructor() {
     this.#lepes = 0;
     this.lista = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
+
     const ART = $("article");
     for (let index = 0; index < 9; index++) {
       const element = new Elem(index, ART);
@@ -22,9 +25,36 @@ class Jatekter {
       }
       let kesz = this.ellenorzes();
       this.#lepes++;
-      posi.NyertesKiir(kesz);
-    
+      this.#nyertes = kesz;
+      if ((this.#nyertes == "X" || this.#nyertes == "O") ) {
+        this.jatekvege();
+      }
     });
+
+  }
+  jatekvege(){
+    let pontX;
+    let pontO;
+    console.log(window.localStorage.getItem('jatekosX') );
+    if (window.localStorage.getItem('jatekosX') == null) {
+      pontX = 1;
+    }else  {
+      pontX = parseInt(window.localStorage.getItem('jatekosX'))  +1;
+    }
+    if (window.localStorage.getItem('jatekosO') == null) {
+      pontO = 1;
+    }else  {
+      pontO = parseInt(window.localStorage.getItem('jatekosO'))  +1 ;
+    }
+    if (this.#nyertes == "O") {
+      window.localStorage.setItem('jatekosO',pontO)  ;
+    }
+    if (this.#nyertes == "X") {
+      window.localStorage.setItem('jatekosX',pontX)  ;
+    }
+    new Info("A játék vége", this.#nyertes, $("body"));
+    $("div").off("click");
+
   }
   vizSzintes() {
     let txt = "";
@@ -64,7 +94,7 @@ class Jatekter {
     } else if (
       !osszegzesTXT.includes("XXX") &&
       !osszegzesTXT.includes("OOO") &&
-      !osszegzesTXT.includes(" ") 
+      !osszegzesTXT.includes(" ")
     ) {
       nyert = "Döntetlen";
     }

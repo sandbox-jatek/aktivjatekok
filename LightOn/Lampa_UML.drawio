@@ -1,0 +1,95 @@
+<mxfile host="app.diagrams.net" modified="2023-06-02T06:45:56.141Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="AR4tbT6E0aeCpbKtPDbo" version="21.3.7" type="device">
+  <diagram name="1 oldal" id="GmktwkUOFRcXiDnpdZY2">
+    <mxGraphModel dx="880" dy="484" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="6V3xMH_shsjAsePLFKWM-1" value="JatekTer" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="190" width="330" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-2" value="-db: evvel foglyuk megszámólni a div tageket" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6V3xMH_shsjAsePLFKWM-1">
+          <mxGeometry y="26" width="330" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-5" value="-meret: ennek a területét számóljuk meg db*db" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6V3xMH_shsjAsePLFKWM-1">
+          <mxGeometry y="70" width="330" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-6" value="-allapotLista[]: tömb, Ezekbe lesznek a div tagek" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6V3xMH_shsjAsePLFKWM-1">
+          <mxGeometry y="110" width="330" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-17" value="-lepes: kezdő értéke némelyik lámpának" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6V3xMH_shsjAsePLFKWM-1">
+          <mxGeometry y="160" width="330" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6V3xMH_shsjAsePLFKWM-1">
+          <mxGeometry y="210" width="330" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-4" value="constructor(): értékeket adunk az adattagoknak, és itt hívjuk meg a metódusokat, Itt lesz a kattintással történő utasítások pl: fel/le kapcsoljuk a lámpákat" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6V3xMH_shsjAsePLFKWM-1">
+          <mxGeometry y="218" width="330" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-7" value="-setallapotMegjelenites(): void típusú, ebbe fogjuk kiiratni és megjeleníteni a táblát, ebbe hívjuk meg a Lampa osztályt" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6V3xMH_shsjAsePLFKWM-1">
+          <mxGeometry y="280" width="330" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-8" value="+szomszedokKeresese: ez fogja kezelni a szomszédokat, ha rá kattintuk egy div elemre akkor a körülötte lévő lámpáknak is változtatja az értékét." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6V3xMH_shsjAsePLFKWM-1">
+          <mxGeometry y="330" width="330" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-9" value="Lampa" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="210" width="290" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-10" value="-allapot: a divek alaphelyzetét tartja fent" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6V3xMH_shsjAsePLFKWM-9">
+          <mxGeometry y="26" width="290" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-11" value="-id: egyedivé teszi a különböző div elemeket" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6V3xMH_shsjAsePLFKWM-9">
+          <mxGeometry y="70" width="290" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-12" value="-divElem:Megjeleníti a lámpákat" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6V3xMH_shsjAsePLFKWM-9">
+          <mxGeometry y="110" width="290" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-18" value="-pontDb: statikus, számólja a divekere eső kattintásokat" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6V3xMH_shsjAsePLFKWM-9">
+          <mxGeometry y="160" width="290" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-13" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="6V3xMH_shsjAsePLFKWM-9">
+          <mxGeometry y="210" width="290" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-14" value="constructor(allapot, id, szuloelem): A lampa osztályt fogjuk felhasználni a divek megjelenítésére, itt hívjuk meg a Lampa metódusait és itt lesz a kattintással történő utasítások." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6V3xMH_shsjAsePLFKWM-9">
+          <mxGeometry y="218" width="290" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-15" value="+setAllapot: Ez fogja változtatni a divek értékeit, ha 0 akkor 1-es ha 1-es akkor 0" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6V3xMH_shsjAsePLFKWM-9">
+          <mxGeometry y="300" width="290" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-16" value="-szinBeallit(): A setAllapot() értékeinek megfelelően változtatja a lámpák színeit" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6V3xMH_shsjAsePLFKWM-9">
+          <mxGeometry y="360" width="290" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-19" value="-kattintasTrigger(): Ez lesz az esemény kezelő, class-hoz fűzzük a diveket, és annak segítségével fogjuk változtatni az értékeket a construtor-ban lévő kattintással." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6V3xMH_shsjAsePLFKWM-9">
+          <mxGeometry y="420" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-20" value="-kattintasTrigger(): Ez lesz az esemény kezelő, class-hoz fűzzük a diveket, és annak segítségével fogjuk változtatni az értékeket a construtor-ban lévő kattintással." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6V3xMH_shsjAsePLFKWM-9">
+          <mxGeometry y="500" width="290" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-21" value="-pontSzamlalas(): Számólni fogja a kattintásokat amiket persze a lámpákra kattintáskor nő" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6V3xMH_shsjAsePLFKWM-9">
+          <mxGeometry y="590" width="290" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-22" value="pontKiiratasa(): megjeleníti a számolt pontot és ott fogja számólni" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="6V3xMH_shsjAsePLFKWM-9">
+          <mxGeometry y="640" width="290" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-23" value="Lampa osztály export JatekTer" style="html=1;verticalAlign=bottom;endArrow=open;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;strokeWidth=2;endFill=0;entryX=1.018;entryY=0.18;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="6V3xMH_shsjAsePLFKWM-9" target="6V3xMH_shsjAsePLFKWM-17">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="510" y="30" as="sourcePoint" />
+            <mxPoint x="380" y="360" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-28" value="JatekTer export a Mainre" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;exitX=1.012;exitY=0.22;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="6V3xMH_shsjAsePLFKWM-6" target="6V3xMH_shsjAsePLFKWM-29">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="380" y="320" as="sourcePoint" />
+            <mxPoint x="381.03999999999996" y="618.96" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="430" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6V3xMH_shsjAsePLFKWM-29" value="Main: ez példányosítja a JatekTer-t" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="414" y="110" width="110" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

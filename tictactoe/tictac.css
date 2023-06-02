@@ -1,19 +1,20 @@
-.game-board
-{
-	width: 600px;
-	height: 600px;
-	margin: 0 auto;
+:root {
+  --main-color: ;
+}
+
+.game-board {
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
   background-color: #34495e;
   color: #fff;
   border: 6px solid #2c3e50;
   border-radius: 10px;
-	
-	display: grid;
-	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 }
 
-.elemek
-{
+.elemek {
   border: 6px solid #2c3e50;
   border-radius: 2px;
   font-family: Helvetica;
@@ -24,6 +25,32 @@
   align-items: center;
 }
 
-.elemek:hover{
+.elemek:hover {
   cursor: pointer;
+}
+
+:root {
+  --body-szinek: #6449c1;
+}
+nav {
+  color: #3fd73f;
+}
+
+body {
+  background-color: #6449c1;
+  max-width: 750px;
+  margin: auto;
+  padding: 10px;
+}
+header {
+  text-align: center;
+  height: 300%;
+}
+nav {
+  background-color: #ff4b4b;
+  border-radius: 10px;
+}
+footer {
+  background-color: #ff4b4b;
+  border-radius: 10px;
 }
