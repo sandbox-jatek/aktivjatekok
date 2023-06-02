@@ -4,7 +4,7 @@ body {
   margin: auto;
   padding: 10px;
   display: grid;
-  grid-template-columns: 5fr 1fr;
+  grid-template-columns: 5fr 2fr;
   grid-template-areas: 
   "h h"
   "n n"
@@ -41,7 +41,7 @@ footer{
   grid-area: fo;
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1600px) {
   body {
     display: grid;
     grid-template-columns: 1fr;

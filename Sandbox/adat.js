@@ -8,7 +8,12 @@ const kepekLista = [
   "kepek/lava.PNG",
   "kepek/lomb.PNG",
   "kepek/fa.PNG",
-  "kepek/inv.PNG"
+  "kepek/invFold.PNG",
+  "kepek/invFu.PNG",
+  "kepek/invKo.PNG",
+  "kepek/invFa.PNG",
+  "kepek/invBokor.PNG",
+  "kepek/invLava.PNG",
 ];
 
 export default kepekLista;
