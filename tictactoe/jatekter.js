@@ -1,12 +1,15 @@
 import Elem from "./Elem.js";
+import Info from "./info.js";
 class Jatekter {
   lista = [];
   #lepes = 0;
+  #nyertes = "";
   //https://github.com/csefikatalin/harcos_varazslo
-  //felugro elem nézd meg 
+  //felugro elem nézd meg
   constructor() {
     this.#lepes = 0;
     this.lista = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
+
     const ART = $("article");
     for (let index = 0; index < 9; index++) {
       const element = new Elem(index, ART);
@@ -22,9 +25,16 @@ class Jatekter {
       }
       let kesz = this.ellenorzes();
       this.#lepes++;
-      posi.NyertesKiir(kesz);
-    
+      this.#nyertes = kesz;
+      if ((this.#nyertes == "X" || this.#nyertes == "O") ) {
+        this.jatekvege();
+      }
     });
+
+  }
+  jatekvege(){
+    new Info("A játék vége", this.#nyertes, $("body"));
+    $("div").off("click");
   }
   vizSzintes() {
     let txt = "";
@@ -64,7 +74,7 @@ class Jatekter {
     } else if (
       !osszegzesTXT.includes("XXX") &&
       !osszegzesTXT.includes("OOO") &&
-      !osszegzesTXT.includes(" ") 
+      !osszegzesTXT.includes(" ")
     ) {
       nyert = "Döntetlen";
     }
