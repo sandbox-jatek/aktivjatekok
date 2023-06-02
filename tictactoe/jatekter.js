@@ -33,8 +33,28 @@ class Jatekter {
 
   }
   jatekvege(){
+    let pontX;
+    let pontO;
+    console.log(window.localStorage.getItem('jatekosX') );
+    if (window.localStorage.getItem('jatekosX') == null) {
+      pontX = 1;
+    }else  {
+      pontX = parseInt(window.localStorage.getItem('jatekosX'))  +1;
+    }
+    if (window.localStorage.getItem('jatekosO') == null) {
+      pontO = 1;
+    }else  {
+      pontO = parseInt(window.localStorage.getItem('jatekosO'))  +1 ;
+    }
+    if (this.#nyertes == "O") {
+      window.localStorage.setItem('jatekosO',pontO)  ;
+    }
+    if (this.#nyertes == "X") {
+      window.localStorage.setItem('jatekosX',pontX)  ;
+    }
     new Info("A játék vége", this.#nyertes, $("body"));
     $("div").off("click");
+
   }
   vizSzintes() {
     let txt = "";

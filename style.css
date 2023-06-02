@@ -1,5 +1,13 @@
+:root {
+  --body-szinek: #6449C1;
+}
+nav{
+  color: #3FD73F;
+}
+
+
 body {
-  background-color: aquamarine;
+  background-color: #6449C1;
   max-width: 750px;
   margin: auto;
   padding: 10px;
@@ -8,4 +16,12 @@ body {
 header{
     text-align: center;
     height: 300%;
+}
+nav{
+  background-color: #ff4b4b;
+  border-radius: 10px;
+}
+footer{
+  background-color: #ff4b4b;
+  border-radius: 10px;
 }
