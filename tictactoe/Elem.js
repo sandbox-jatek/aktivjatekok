@@ -1,6 +1,8 @@
 class Elem{
     #index;
     #allapot = true;
+    #vaghato = false;
+    
     constructor(index,ART){
         this.#index=index;
         ART.append("<div class='elemek'><p> </p></div>");
@@ -11,10 +13,16 @@ class Elem{
             if ((this.#allapot)) {
                 this.Katt();
                 this.#allapot = false;
+            }else if(this.#vaghato){
+                this.ablak();
+                
             }
             
         })
 
+    }
+    setvaghato(ertek){
+        this.#vaghato = ertek;
     }
     getIndex(){
         return this.#index;
@@ -23,16 +31,12 @@ class Elem{
         this.tag.html(adat);
         this.divElem.css("background-color",szin)
     }
+    ablak(){
+        this.Katt("jatekvege");
+    }
     Katt(){
         const ESEMENY = new CustomEvent("elemKatt",{detail: this});
         window.dispatchEvent(ESEMENY);
-    }
-    NyertesKiir(nyert){
-        const BODY = $("body");
-        BODY.append( `asasddd`
-  );
-        this.tag = $('article div:last-child p');
-
     }
     
 }
