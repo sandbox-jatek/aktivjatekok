@@ -21,37 +21,34 @@ class JatekTer {
         }
 
         this.#setAllapotListaMegjelenites();
-        
+
 
         $(window).on("kapcsolas", (event) => {
             console.log(event.detail);
             event.detail.setAllapot();
-            this.szomszedokKeresese(this.#db);
-            
+            this.szomszedokKeresese(event.detail.id);
+
         });
 
     }
 
     #setAllapotListaMegjelenites() {
-        const ARTICLE = $("article");  
-        ARTICLE.empty(); 
+        const ARTICLE = $("article");
+        ARTICLE.empty();
         for (let i = 0; i < this.#allapotLista.length; i++) {
             new Lampa(this.#allapotLista[i], i, ARTICLE);
         }
-       
+
     }
 
     szomszedokKeresese(id) {
-        const sorIndex = Math.floor(id / this.#db);
-        const oszlopIndex = id % this.#db;
-        
-        const szomszedFelsoSor = sorIndex > 0 ? (sorIndex - 1) * this.#db + oszlopIndex : null;
-        const szomszedAlsoSor = sorIndex < this.#db - 1 ? (sorIndex + 1) * this.#db + oszlopIndex : null;
-        const szomszedBal = oszlopIndex > 0 ? sorIndex * this.#db + (oszlopIndex - 1) : null;
-        const szomszedJobb = oszlopIndex < this.#db - 1 ? sorIndex * this.#db + (oszlopIndex + 1) : null;
-
+    
+        const szomszedFelsoSor = id > 5 ? id : id + 3;
+        const szomszedAlsoSor = id < 3 ? id : id - 3;;
+        const szomszedBal = id % 3 == 0 ? id : id - 1;;
+        const szomszedJobb = id % 3 == 2 ? id : id + 1;
         const szomszedek = [szomszedFelsoSor, szomszedAlsoSor, szomszedBal, szomszedJobb, id];
-
+        console.log(szomszedek)
         for (const szomszed of szomszedek) {
             if (szomszed !== null) {
                 if (this.#allapotLista[szomszed] === 1) {

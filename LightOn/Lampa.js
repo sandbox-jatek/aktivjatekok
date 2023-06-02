@@ -1,12 +1,12 @@
 class Lampa {
     #allapot
-    #id
+  
     #divElem
     static #pontDb = 0;
   
     constructor(allapot, id, szuloElem) {
       this.#allapot = allapot;
-      this.#id = id;
+      this.id = id;
   
       const DIV = $("<div>").addClass("keret kapcsolas");
       DIV.text(allapot);
