@@ -105,7 +105,9 @@ class Block {
     window.dispatchEvent(esemeny);
   }
 
-  setBlock() {
+  setBlock(kattintottBlock, block) {
+    console.log(kattintottBlock.getAllapot())
+    console.log(block)
     if (this.#allapot == 0) {
       this.#allapot = 1;
       this.#setAllapot(this.#allapot);

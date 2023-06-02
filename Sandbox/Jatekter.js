@@ -365,7 +365,7 @@ class Jatekter {
     ],
   ];
 
-  #inventory = ["0", "0", "0", "0"];
+  #inventory = ["0", "1", "2", "3", "4", "5"];
   #JatekterDb = 0;
   #foldszint = this.#jatek.length - 1;
   #tarhely = [];
@@ -373,8 +373,8 @@ class Jatekter {
   #kivalasztottBlock;
   #kivalasztottBlockTarhely = [];
   #kivalasztottBlockHely = [];
-  #inventoryadat = [];
   #kepekLista = [];
+  #inventoryBlock;
   constructor(kepekLista) {
     this.#kepekLista = kepekLista;
     this.#spawn();
@@ -403,7 +403,7 @@ class Jatekter {
     $(window).on("kattintas", (event) => {
       this.#tarhely.push(event.detail);
       this.#kivalasztottBlock = event.detail;
-      this.inventory();
+      this.inventory.beallit("BLOCK ÜZENT");
     });
 
     $(window).on("kattintas2", (event) => {
@@ -414,8 +414,10 @@ class Jatekter {
     });
 
     $(window).on("adat", (event) => {
-      this.#inventoryadat.push(event.detail);
+      this.#inventoryBlock = event.detail;
+      console.log(this.#inventoryBlock.getAllapot())
     });
+
   }
 
   #init() {
@@ -423,7 +425,7 @@ class Jatekter {
     for (let i = 0; i < this.#jatek.length; i++) {
       this.#JatekterDb += this.#jatek[i].length;
       for (let j = 0; j < this.#jatek[i].length; j++) {
-        const jatek = new Block(
+        this.block = new Block(
           this.#jatek[i][j],
           szuloElem,
           i,
@@ -434,7 +436,12 @@ class Jatekter {
     }
     const asideElem = $("aside");
     for (let i = 0; i < this.#inventory.length; i++) {
-      const inventory = new Inventory(this.#inventory[i], asideElem, i, this.#kepekLista);
+      this.inventory = new Inventory(
+        this.#inventory[i],
+        asideElem,
+        i,
+        this.#kepekLista
+      );
     }
   }
 
@@ -474,10 +481,9 @@ class Jatekter {
           this.#tarhely[i].setMozgas();
           this.#tarhely[i - 1].setMozgas();
           this.autole(i);
-        }else if(this.#tarhely[i - 1].getAllapot() == 4){
+        } else if (this.#tarhely[i - 1].getAllapot() == 4) {
           console.log("meghaltál!");
-        }
-         else if (
+        } else if (
           this.#tarhely[i - 1].getAllapot() != 0 &&
           this.#tarhely[
             i - this.#jatek[this.#foldszint].length - 1
@@ -504,10 +510,11 @@ class Jatekter {
           this.#tarhely[i].setMozgas();
           this.#tarhely[i + 1].setMozgas();
           this.autolee(i);
-        }else if(this.#tarhely[i + 1].getAllapot() == 4){
-          console.log(this.#tarhely[i - this.#jatek[this.#foldszint].length + 1])
-        }
-         else if (
+        } else if (this.#tarhely[i + 1].getAllapot() == 4) {
+          console.log(
+            this.#tarhely[i - this.#jatek[this.#foldszint].length + 1]
+          );
+        } else if (
           this.#tarhely[i + 1].getAllapot() != 0 &&
           this.#tarhely[
             i - this.#jatek[this.#foldszint].length + 1
@@ -641,7 +648,7 @@ class Jatekter {
         );
         for (let j = 0; j < this.#kivalasztottBlockHely.length - 1; j++) {
           if (this.#kivalasztottBlock == this.#kivalasztottBlockHely[j]) {
-            this.#kivalasztottBlock.setBlock();
+            this.block.setBlock(this.#kivalasztottBlock, this.#inventoryBlock.getAllapot())
           }
         }
         this.#kivalasztottBlockHely = $().empty();
@@ -650,10 +657,6 @@ class Jatekter {
     this.#kivalasztottBlockTarhely = $().empty();
   }
 
-  inventory() {
-    if (this.#kivalasztottBlock.getAllapot() == 1) {
-    }
-  }
 }
 
 export default Jatekter;
