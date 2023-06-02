@@ -20,7 +20,7 @@ class Blokle {
 
         this.#eredetiHatterszin = this.#divElem.css("background-color");
         this.#eredetiSzovegszin = this.#divElem.css("color");
-
+        this.setBlok();
         this.blokLerakEsFelvessz();
         this.#divElem.on("click", () => {
             console.log(this.id)
@@ -33,30 +33,33 @@ class Blokle {
 
     }
 
+
     szinbeallit(szinkod) {
         switch (szinkod) {
-            case 0:
+            case 1:
                 console.log(this.#divElem);
                 this.#divElem.css("background-color", "red");
-                break;
-            case 1:
-                this.#divElem.css("background-color", "blue");
+                this.#divElem.css("color", "red");
                 break;
             case 2:
-                this.#divElem.css("background-color", "brown");
+                this.#divElem.css("background-color", "blue");
+                this.#divElem.css("color", "blue");
                 break;
             case 3:
+                this.#divElem.css("background-color", "brown");
+                this.#divElem.css("color", "brown");
+                break;
+            case 4:
                 this.#divElem.css("background-color", "darkblue");
+                this.#divElem.css("color", "darkblue");
                 break;
             default:
                 this.#divElem.css("background-color", "white");
+                this.#divElem.css("color", "white");
         }
     }
 
     blokLerakEsFelvessz() {
-        if (this.blok === 0) {
-            this.szinbeallit(this.blok);
-        }
         if (this.blok === 1) {
             this.szinbeallit(this.blok);
         }
@@ -66,14 +69,15 @@ class Blokle {
         if (this.blok === 3) {
             this.szinbeallit(this.blok);
         }
+        if (this.blok === 4) {
+            this.szinbeallit(this.blok);
+        }
     }
 
         setBlok() {
             if (this.blok === 0) {
-                this.blok = 1;
-            } else {
-                this.blok = 0;
-            }
+               this.blok = this.szinbeallit(this.blok);
+            } 
         }
 
         kattintasTrigger(esemenyNev) {
