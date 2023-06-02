@@ -1,6 +1,13 @@
 :root {
   --main-color: ;
 }
+.right{
+  position: absolute;
+  right: 150px;  
+  width: 200px;
+  height: 120px;
+  border: 3px solid green;
+}
 
 .game-board {
   width: 600px;
@@ -27,10 +34,6 @@
 
 .elemek:hover {
   cursor: pointer;
-}
-
-:root {
-  --body-szinek: #6449c1;
 }
 nav {
   color: #3fd73f;
