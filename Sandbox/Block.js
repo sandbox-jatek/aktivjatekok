@@ -22,7 +22,6 @@ class Block {
   }
 
   #setAllapot(allapot) {
-    
     if (allapot == 0) {
       this.#imgElem.attr("src", this.#kepek[1]);
     } else if (allapot == 1) {
@@ -37,11 +36,9 @@ class Block {
       this.#imgElem.attr("src", this.#kepek[2]);
     } else if (allapot == 4) {
       this.#imgElem.attr("src", this.#kepek[6]);
-    }
-    else if (allapot == 5) {
+    } else if (allapot == 5) {
       this.#imgElem.attr("src", this.#kepek[7]);
-    }
-    else if (allapot == 6) {
+    } else if (allapot == 6) {
       this.#imgElem.attr("src", this.#kepek[8]);
     }
   }
@@ -107,46 +104,39 @@ class Block {
   }
 
   setBlock(block, csere) {
-    if(block.getAllapot() == 0){
-      if(csere == 0){
+    if (block.getAllapot() == 0) {
+      if (csere == 0) {
         block.#allapot = 1;
         block.#imgElem.attr("src", this.#kepek[0]);
-      }else if(csere == 1){
+      } else if (csere == 1) {
         block.#allapot = 3;
         block.#imgElem.attr("src", this.#kepek[2]);
-      }
-      else if(csere == 2){
+      } else if (csere == 2) {
         block.#allapot = 2;
         block.#imgElem.attr("src", this.#kepek[3]);
-      }
-      else if(csere == 3){
+      } else if (csere == 3) {
         block.#allapot = 6;
         block.#imgElem.attr("src", this.#kepek[8]);
-      }
-      else if(csere == 4){
+      } else if (csere == 4) {
         block.#allapot = 5;
         block.#imgElem.attr("src", this.#kepek[7]);
-      }
-      else if(csere == 5){
+      } else if (csere == 5) {
         block.#allapot = 4;
         block.#imgElem.attr("src", this.#kepek[6]);
-      }else if(csere == 6){
+      } else if (csere == 6) {
         block.#allapot = 5;
         block.#imgElem.attr("src", this.#kepek[17]);
-      }
-      else if(csere == 7){
+      } else if (csere == 7) {
         block.#allapot = 2;
         block.#imgElem.attr("src", this.#kepek[18]);
-      }
-      else{
+      } else {
         block.#allapot = 1;
         block.#imgElem.attr("src", this.#kepek[0]);
       }
-    }else{
+    } else {
       block.#allapot = 0;
       block.#imgElem.attr("src", this.#kepek[1]);
     }
-    
   }
 
   setFu() {

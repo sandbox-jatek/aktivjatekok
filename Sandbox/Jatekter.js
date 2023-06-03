@@ -479,8 +479,6 @@ class Jatekter {
           this.#tarhely[i].setMozgas();
           this.#tarhely[i - 1].setMozgas();
           this.autole(i);
-        } else if (this.#tarhely[i - 1].getAllapot() == 4) {
-          console.log("meghaltál!");
         } else if (
           this.#tarhely[i - 1].getAllapot() != 0 &&
           this.#tarhely[
@@ -508,10 +506,6 @@ class Jatekter {
           this.#tarhely[i].setMozgas();
           this.#tarhely[i + 1].setMozgas();
           this.autolee(i);
-        } else if (this.#tarhely[i + 1].getAllapot() == 4) {
-          console.log(
-            this.#tarhely[i - this.#jatek[this.#foldszint].length + 1]
-          );
         } else if (
           this.#tarhely[i + 1].getAllapot() != 0 &&
           this.#tarhely[
@@ -565,10 +559,18 @@ class Jatekter {
   }
 
   autole(i) {
+    let szorzo = 1
     let szam = i + this.#jatek[this.#foldszint].length - 1;
-    if (this.#tarhely[szam].getAllapot() == 0) {
+    while(this.#tarhely[szam].getAllapot() == 0){
+      szorzo++;
+      szam = i + this.#jatek[this.#foldszint].length * szorzo - 1;
+
+    }
+    szorzo = szorzo - 1
+    let szam2 = i + this.#jatek[this.#foldszint].length * szorzo - 1;
+    if (this.#tarhely[szam2].getAllapot() == 0) {
       this.#tarhely[i - 1].setMozgas();
-      this.#tarhely[szam].setMozgas();
+      this.#tarhely[szam2].setMozgas();
       this.#tarhely = $().empty();
     } else {
       this.#tarhely = $().empty();
@@ -576,10 +578,18 @@ class Jatekter {
   }
 
   autolee(i) {
+    let szorzo = 1
     let szam = i + this.#jatek[this.#foldszint].length + 1;
-    if (this.#tarhely[szam].getAllapot() == 0) {
+    while(this.#tarhely[szam].getAllapot() == 0){
+      szorzo++;
+      szam = i + this.#jatek[this.#foldszint].length * szorzo + 1;
+
+    }
+    szorzo = szorzo - 1
+    let szam2 = i + this.#jatek[this.#foldszint].length * szorzo + 1;
+    if (this.#tarhely[szam2].getAllapot() == 0) {
       this.#tarhely[i + 1].setMozgas();
-      this.#tarhely[szam].setMozgas();
+      this.#tarhely[szam2].setMozgas();
       this.#tarhely = $().empty();
     }
     else {
