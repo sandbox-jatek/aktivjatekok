@@ -16,31 +16,32 @@ class Block {
     szuloElem.append(DIV);
     this.#divElem = szuloElem.children("div:last-child");
     this.#imgElem = this.#divElem.children("img");
-    this.#setAllapot();
+    this.#setAllapot(this.#allapot);
 
     this.mozgas();
   }
 
-  #setAllapot() {
-    if (this.#allapot == 0) {
+  #setAllapot(allapot) {
+    
+    if (allapot == 0) {
       this.#imgElem.attr("src", this.#kepek[1]);
-    } else if (this.#allapot == 1) {
+    } else if (allapot == 1) {
       this.#imgElem.attr("src", this.#kepek[0]);
-    } else if (this.#allapot == "K") {
+    } else if (allapot == "K") {
       this.#imgElem.attr("src", this.#kepek[5]);
-    } else if (this.#allapot == "B") {
+    } else if (allapot == "B") {
       this.#imgElem.attr("src", this.#kepek[4]);
-    } else if (this.#allapot == 2) {
+    } else if (allapot == 2) {
       this.#imgElem.attr("src", this.#kepek[3]);
-    } else if (this.#allapot == 3) {
+    } else if (allapot == 3) {
       this.#imgElem.attr("src", this.#kepek[2]);
-    } else if (this.#allapot == 4) {
+    } else if (allapot == 4) {
       this.#imgElem.attr("src", this.#kepek[6]);
     }
-    else if (this.#allapot == 5) {
+    else if (allapot == 5) {
       this.#imgElem.attr("src", this.#kepek[7]);
     }
-    else if (this.#allapot == 6) {
+    else if (allapot == 6) {
       this.#imgElem.attr("src", this.#kepek[8]);
     }
   }
@@ -105,18 +106,47 @@ class Block {
     window.dispatchEvent(esemeny);
   }
 
-  setBlock(kattintottBlock, block) {
-    console.log(kattintottBlock.getAllapot())
-    console.log(block)
-    if (this.#allapot == 0) {
-      this.#allapot = 1;
-      this.#setAllapot(this.#allapot);
-    } else if (this.#allapot == "B") {
-      console.log("Ne üsd ki!");
-    } else {
-      this.#allapot = 0;
-      this.#setAllapot(this.#allapot);
+  setBlock(block, csere) {
+    if(block.getAllapot() == 0){
+      if(csere == 0){
+        block.#allapot = 1;
+        block.#imgElem.attr("src", this.#kepek[0]);
+      }else if(csere == 1){
+        block.#allapot = 3;
+        block.#imgElem.attr("src", this.#kepek[2]);
+      }
+      else if(csere == 2){
+        block.#allapot = 2;
+        block.#imgElem.attr("src", this.#kepek[3]);
+      }
+      else if(csere == 3){
+        block.#allapot = 6;
+        block.#imgElem.attr("src", this.#kepek[8]);
+      }
+      else if(csere == 4){
+        block.#allapot = 5;
+        block.#imgElem.attr("src", this.#kepek[7]);
+      }
+      else if(csere == 5){
+        block.#allapot = 4;
+        block.#imgElem.attr("src", this.#kepek[6]);
+      }else if(csere == 6){
+        block.#allapot = 5;
+        block.#imgElem.attr("src", this.#kepek[17]);
+      }
+      else if(csere == 7){
+        block.#allapot = 2;
+        block.#imgElem.attr("src", this.#kepek[18]);
+      }
+      else{
+        block.#allapot = 1;
+        block.#imgElem.attr("src", this.#kepek[0]);
+      }
+    }else{
+      block.#allapot = 0;
+      block.#imgElem.attr("src", this.#kepek[1]);
     }
+    
   }
 
   setFu() {

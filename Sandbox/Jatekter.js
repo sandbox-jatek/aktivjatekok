@@ -317,26 +317,26 @@ class Jatekter {
     ],
     [
       "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
+      "2",
+      "4",
+      "4",
+      "4",
+      "4",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "4",
+      "4",
+      "4",
+      "4",
+      "4",
+      "4",
+      "2",
+      "2",
       "B",
     ],
     [
@@ -365,7 +365,7 @@ class Jatekter {
     ],
   ];
 
-  #inventory = ["0", "1", "2", "3", "4", "5"];
+  #inventory = ["0", "1", "2", "3", "4", "5", "6", "7"];
   #JatekterDb = 0;
   #foldszint = this.#jatek.length - 1;
   #tarhely = [];
@@ -403,7 +403,6 @@ class Jatekter {
     $(window).on("kattintas", (event) => {
       this.#tarhely.push(event.detail);
       this.#kivalasztottBlock = event.detail;
-      this.inventory.beallit("BLOCK ÜZENT");
     });
 
     $(window).on("kattintas2", (event) => {
@@ -414,8 +413,7 @@ class Jatekter {
     });
 
     $(window).on("adat", (event) => {
-      this.#inventoryBlock = event.detail;
-      console.log(this.#inventoryBlock.getAllapot())
+      this.#inventoryBlock = event.detail.getAllapot();
     });
 
   }
@@ -583,7 +581,8 @@ class Jatekter {
       this.#tarhely[i + 1].setMozgas();
       this.#tarhely[szam].setMozgas();
       this.#tarhely = $().empty();
-    } else {
+    }
+    else {
       this.#tarhely = $().empty();
     }
   }
@@ -648,7 +647,8 @@ class Jatekter {
         );
         for (let j = 0; j < this.#kivalasztottBlockHely.length - 1; j++) {
           if (this.#kivalasztottBlock == this.#kivalasztottBlockHely[j]) {
-            this.block.setBlock(this.#kivalasztottBlock, this.#inventoryBlock.getAllapot())
+            this.block.setBlock(this.#kivalasztottBlock, this.#inventoryBlock)
+            this.#kivalasztottBlock = $().empty();
           }
         }
         this.#kivalasztottBlockHely = $().empty();

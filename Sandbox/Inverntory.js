@@ -35,15 +35,17 @@ class Inventory {
       this.#imgElem.attr("src", this.#kepek[13]);
     } else if (this.#allapot == 5) {
       this.#imgElem.attr("src", this.#kepek[14]);
+    } else if (this.#allapot == 6) {
+      this.#imgElem.attr("src", this.#kepek[15]);
+    } else if (this.#allapot == 7) {
+      this.#imgElem.attr("src", this.#kepek[16]);
     }
   }
 
   getAllapot() {
     return this.#allapot;
   }
-  beallit(VALAMI) {
-    console.log(VALAMI);
-  }
+
   #esemenyTrigger() {
     let esemeny = new CustomEvent("adat", { detail: this });
     window.dispatchEvent(esemeny);
