@@ -16,12 +16,15 @@ class Block {
     szuloElem.append(DIV);
     this.#divElem = szuloElem.children("div:last-child");
     this.#imgElem = this.#divElem.children("img");
-    this.#setAllapot(this.#allapot);
-
-    this.mozgas();
+    this.#setBlockok(this.#allapot);
+    this.#mozgas(65, 37, "balra");
+    this.#mozgas(68, 39, "jobbra");
+    this.#mozgas(87, 38, "fel");
+    this.#kattintas(this.#divElem, "blockLerakas");
+    this.#kattintas($(window), "blockok");
   }
 
-  #setAllapot(allapot) {
+  #setBlockok(allapot) {
     if (allapot == 0) {
       this.#imgElem.attr("src", this.#kepek[1]);
     } else if (allapot == 1) {
@@ -47,10 +50,6 @@ class Block {
     return this.#y;
   }
 
-  getX() {
-    return this.#x;
-  }
-
   getAllapot() {
     return this.#allapot;
   }
@@ -58,48 +57,29 @@ class Block {
   setMozgas() {
     if (this.#allapot == 0) {
       this.#allapot = "K";
-      this.#setAllapot(this.#allapot);
+      this.#setBlockok(this.#allapot);
     } else {
       this.#allapot = "0";
-      this.#setAllapot(this.#allapot);
+      this.#setBlockok(this.#allapot);
     }
   }
 
-  mozgas() {
+  #mozgas(gomb, gomb2, mozgas) {
     $(window).on("keydown", () => {
-      if (event.which === 65 || event.which === 37) {
-        let esemeny = new CustomEvent("balra", { detail: this });
+      if (event.which === gomb || event.which === gomb2) {
+        let esemeny = new CustomEvent(mozgas, { detail: this });
         window.dispatchEvent(esemeny);
       }
     });
-    $(window).on("keydown", () => {
-      if (event.which === 68 || event.which === 39) {
-        let esemeny = new CustomEvent("jobbra", { detail: this });
-        window.dispatchEvent(esemeny);
-      }
-    });
-    $(window).on("keydown", () => {
-      if (event.which === 87 || event.which === 38) {
-        let esemeny = new CustomEvent("fel", { detail: this });
-        window.dispatchEvent(esemeny);
-      }
-    });
-
-    this.#divElem.on("click", () => {
-      this.#kattintasTrigger();
-    });
-    $(window).on("click", () => {
-      this.#kattintasTrigger2();
+  }
+  #kattintas(esemeny, kattintas) {
+    esemeny.on("click", () => {
+      this.#kattintasTrigger(kattintas);
     });
   }
 
-  #kattintasTrigger() {
-    let esemeny = new CustomEvent("kattintas", { detail: this });
-    window.dispatchEvent(esemeny);
-  }
-
-  #kattintasTrigger2() {
-    let esemeny = new CustomEvent("kattintas2", { detail: this });
+  #kattintasTrigger(kattintas) {
+    let esemeny = new CustomEvent(kattintas, { detail: this });
     window.dispatchEvent(esemeny);
   }
 
@@ -133,16 +113,11 @@ class Block {
         block.#allapot = 1;
         block.#imgElem.attr("src", this.#kepek[0]);
       }
+    } else if (block.getAllapot() == "B") {
+      console.log("ne üsd meg!");
     } else {
       block.#allapot = 0;
       block.#imgElem.attr("src", this.#kepek[1]);
-    }
-  }
-
-  setFu() {
-    if (this.#allapot == 1) {
-      this.#allapot = 3;
-      this.#setAllapot(this.#allapot);
     }
   }
 }

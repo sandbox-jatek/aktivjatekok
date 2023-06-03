@@ -4,31 +4,31 @@ import Inventory from "./Inverntory.js";
 class Jatekter {
   #jatek = [
     [
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
-      "B",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
     ],
     [
-      "B",
+      "0",
       "0",
       "0",
       "5",
@@ -49,10 +49,10 @@ class Jatekter {
       "0",
       "0",
       "0",
-      "B",
+      "3",
     ],
     [
-      "B",
+      "0",
       "0",
       "5",
       "5",
@@ -73,10 +73,10 @@ class Jatekter {
       "0",
       "0",
       "0",
-      "B",
+      "1",
     ],
     [
-      "B",
+      "0",
       "0",
       "5",
       "5",
@@ -97,10 +97,10 @@ class Jatekter {
       "0",
       "0",
       "3",
-      "B",
+      "1",
     ],
     [
-      "B",
+      "0",
       "0",
       "0",
       "0",
@@ -121,10 +121,10 @@ class Jatekter {
       "0",
       "0",
       "1",
-      "B",
+      "1",
     ],
     [
-      "B",
+      "0",
       "0",
       "0",
       "0",
@@ -145,10 +145,10 @@ class Jatekter {
       "0",
       "3",
       "1",
-      "B",
+      "1",
     ],
     [
-      "B",
+      "0",
       "0",
       "0",
       "0",
@@ -169,10 +169,10 @@ class Jatekter {
       "3",
       "1",
       "1",
-      "B",
+      "1",
     ],
     [
-      "B",
+      "3",
       "3",
       "3",
       "3",
@@ -193,10 +193,10 @@ class Jatekter {
       "1",
       "1",
       "1",
-      "B",
+      "1",
     ],
     [
-      "B",
+      "1",
       "1",
       "1",
       "1",
@@ -217,126 +217,174 @@ class Jatekter {
       "1",
       "1",
       "1",
+      "1",
+    ],
+    [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+    ],
+    [
+      "2",
+      "2",
+      "2",
+      "1",
+      "1",
+      "1",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "1",
+      "1",
+      "2",
+      "2",
+      "1",
+      "1",
+      "2",
+      "2",
+      "2",
+      "2",
+    ],
+    [
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+    ],
+    [
+      "2",
+      "2",
+      "2",
+      "2",
+      "4",
+      "4",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "4",
+      "4",
+      "4",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+    ],
+    [
+      "2",
+      "2",
+      "4",
+      "4",
+      "4",
+      "4",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "4",
+      "4",
+      "4",
+      "4",
+      "4",
+      "4",
+      "2",
+      "2",
+      "2",
+    ],
+    [
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
       "B",
     ],
     [
       "B",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
-      "1",
       "B",
-    ],
-    [
       "B",
-      "2",
-      "2",
-      "1",
-      "1",
-      "1",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "1",
-      "1",
-      "2",
-      "2",
-      "1",
-      "1",
-      "2",
-      "2",
-      "2",
       "B",
-    ],
-    [
       "B",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
       "B",
-    ],
-    [
       "B",
-      "2",
-      "2",
-      "2",
-      "4",
-      "4",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "4",
-      "4",
-      "4",
-      "2",
-      "2",
-      "2",
-      "2",
       "B",
-    ],
-    [
       "B",
-      "2",
-      "4",
-      "4",
-      "4",
-      "4",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "2",
-      "4",
-      "4",
-      "4",
-      "4",
-      "4",
-      "4",
-      "2",
-      "2",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
+      "B",
       "B",
     ],
     [
@@ -400,14 +448,18 @@ class Jatekter {
       }
     });
 
-    $(window).on("kattintas", (event) => {
-      this.#tarhely.push(event.detail);
-      this.#kivalasztottBlock = event.detail;
+    $(window).on("blockLerakas", (event) => {
+      if(event.detail.getAllapot() != "K"){
+        this.#tarhely.push(event.detail);
+        this.#kivalasztottBlock = event.detail;
+      }else{
+        console.log("Ne csikizz!")
+      }
     });
 
-    $(window).on("kattintas2", (event) => {
+    $(window).on("blockok", (event) => {
       this.#kivalasztottBlockTarhely.push(event.detail);
-      if (this.#kivalasztottBlockTarhely.length == this.#JatekterDb) {
+      if (this.#kivalasztottBlockTarhely.length == this.#JatekterDb - 1) {
         this.ellenorzes();
       }
     });
@@ -415,7 +467,6 @@ class Jatekter {
     $(window).on("adat", (event) => {
       this.#inventoryBlock = event.detail.getAllapot();
     });
-
   }
 
   #init() {
@@ -478,7 +529,7 @@ class Jatekter {
         if (this.#tarhely[i - 1].getAllapot() == 0) {
           this.#tarhely[i].setMozgas();
           this.#tarhely[i - 1].setMozgas();
-          this.autole(i);
+          this.balrale(i);
         } else if (
           this.#tarhely[i - 1].getAllapot() != 0 &&
           this.#tarhely[
@@ -505,7 +556,7 @@ class Jatekter {
         if (this.#tarhely[i + 1].getAllapot() == 0) {
           this.#tarhely[i].setMozgas();
           this.#tarhely[i + 1].setMozgas();
-          this.autolee(i);
+          this.jobbrale(i);
         } else if (
           this.#tarhely[i + 1].getAllapot() != 0 &&
           this.#tarhely[
@@ -558,15 +609,14 @@ class Jatekter {
     }
   }
 
-  autole(i) {
-    let szorzo = 1
+  balrale(i) {
+    let szorzo = 1;
     let szam = i + this.#jatek[this.#foldszint].length - 1;
-    while(this.#tarhely[szam].getAllapot() == 0){
+    while (this.#tarhely[szam].getAllapot() == 0) {
       szorzo++;
       szam = i + this.#jatek[this.#foldszint].length * szorzo - 1;
-
     }
-    szorzo = szorzo - 1
+    szorzo = szorzo - 1;
     let szam2 = i + this.#jatek[this.#foldszint].length * szorzo - 1;
     if (this.#tarhely[szam2].getAllapot() == 0) {
       this.#tarhely[i - 1].setMozgas();
@@ -577,22 +627,20 @@ class Jatekter {
     }
   }
 
-  autolee(i) {
-    let szorzo = 1
+  jobbrale(i) {
+    let szorzo = 1;
     let szam = i + this.#jatek[this.#foldszint].length + 1;
-    while(this.#tarhely[szam].getAllapot() == 0){
+    while (this.#tarhely[szam].getAllapot() == 0) {
       szorzo++;
       szam = i + this.#jatek[this.#foldszint].length * szorzo + 1;
-
     }
-    szorzo = szorzo - 1
+    szorzo = szorzo - 1;
     let szam2 = i + this.#jatek[this.#foldszint].length * szorzo + 1;
     if (this.#tarhely[szam2].getAllapot() == 0) {
       this.#tarhely[i + 1].setMozgas();
       this.#tarhely[szam2].setMozgas();
       this.#tarhely = $().empty();
-    }
-    else {
+    } else {
       this.#tarhely = $().empty();
     }
   }
@@ -604,7 +652,6 @@ class Jatekter {
         this.#kivalasztottBlockHely.push(this.#kivalasztottBlockTarhely[i + 1]);
         this.#kivalasztottBlockHely.push(this.#kivalasztottBlockTarhely[i - 2]);
         this.#kivalasztottBlockHely.push(this.#kivalasztottBlockTarhely[i + 2]);
-
         this.#kivalasztottBlockHely.push(
           this.#kivalasztottBlockTarhely[
             i + 1 + this.#jatek[this.#foldszint].length
@@ -657,7 +704,7 @@ class Jatekter {
         );
         for (let j = 0; j < this.#kivalasztottBlockHely.length - 1; j++) {
           if (this.#kivalasztottBlock == this.#kivalasztottBlockHely[j]) {
-            this.block.setBlock(this.#kivalasztottBlock, this.#inventoryBlock)
+            this.block.setBlock(this.#kivalasztottBlock, this.#inventoryBlock);
             this.#kivalasztottBlock = $().empty();
           }
         }
@@ -666,7 +713,6 @@ class Jatekter {
     }
     this.#kivalasztottBlockTarhely = $().empty();
   }
-
 }
 
 export default Jatekter;
