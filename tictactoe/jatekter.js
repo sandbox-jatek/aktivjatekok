@@ -16,6 +16,7 @@ class Jatekter {
     }
     $(window).on("elemKatt", (event) => {
       let posi = event.detail;
+      this.jatekosallas();
       if (this.#lepes % 2 === 0) {
         posi.setPosiSyin("X", "red");
         this.lista[posi.getIndex()] = "X";
@@ -26,35 +27,53 @@ class Jatekter {
       let kesz = this.ellenorzes();
       this.#lepes++;
       this.#nyertes = kesz;
-      if ((this.#nyertes == "X" || this.#nyertes == "O") ) {
+      if (this.#nyertes == "X" || this.#nyertes == "O") {
         this.jatekvege();
+
+        
       }
     });
+    $("#nyeresReset").click("katt",(event)=>{
+      window.localStorage.removeItem("jatekosX");
+      window.localStorage.removeItem("jatekosO");
+    }) 
+  }
+  jatekosallas(){
+    const ASI = $(`aside`);
+    ASI.remove("#stat");
+   ASI.html(`      <div class="stat text-center p-3 row">
+   <p class="ertek1 col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">X Játékos : ${window.localStorage.getItem("jatekosX")}</p>
+   <p class="ertek2 col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">O Játékos : ${window.localStorage.getItem("jatekosO")}</p>
+ </div>
+<div class="text-center p-3 row">
+ <button class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3" type="button" id="jatekReset" >Jatek Reset</button>
+ <button class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3" type="button" id="nyeresReset" >Local Reset</button>
+</div>`);
 
   }
-  jatekvege(){
+  jatekvege() {
     let pontX;
     let pontO;
-    console.log(window.localStorage.getItem('jatekosX') );
-    if (window.localStorage.getItem('jatekosX') == null) {
+    console.log(window.localStorage.getItem("jatekosX"));
+    if (window.localStorage.getItem("jatekosX") == null) {
       pontX = 1;
-    }else  {
-      pontX = parseInt(window.localStorage.getItem('jatekosX'))  +1;
+    } else {
+      pontX = parseInt(window.localStorage.getItem("jatekosX")) + 1;
     }
-    if (window.localStorage.getItem('jatekosO') == null) {
+    if (window.localStorage.getItem("jatekosO") == null) {
       pontO = 1;
-    }else  {
-      pontO = parseInt(window.localStorage.getItem('jatekosO'))  +1 ;
+    } else {
+      pontO = parseInt(window.localStorage.getItem("jatekosO")) + 1;
     }
     if (this.#nyertes == "O") {
-      window.localStorage.setItem('jatekosO',pontO)  ;
+      window.localStorage.setItem("jatekosO", pontO);
     }
     if (this.#nyertes == "X") {
-      window.localStorage.setItem('jatekosX',pontX)  ;
+      window.localStorage.setItem("jatekosX", pontX);
     }
     new Info("A játék vége", this.#nyertes, $("body"));
     $("div").off("click");
-
+    return this.#nyertes;
   }
   vizSzintes() {
     let txt = "";

@@ -14,7 +14,6 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="tictac.css" />
     <script src="main.js" type="module"></script>
     <link rel="stylesheet" href="info.css" />
@@ -22,7 +21,7 @@
   </head>
   <body>
     <header><h1>Tictactoe</h1></header>
-    <aside class="right">játokosoks</aside>
+
     <nav class="navbar navbar-expand-sm">
       <div class="container-fluid">
         <ul class="navbar-nav">
@@ -43,8 +42,17 @@
         </ul>
       </div>
     </nav>
+    <aside>
+      <div class="text-center p-3 row" id="stat">
+        <p class="ertek1 col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">X Játékos : 0 </p>
+        <span class="ertek2 col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">O Játékos : 0</span>
+      </div>
+      <div class="text-center p-3 row">
+        <button class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3" type="button" id="jatekReset" >Jatek Reset</button>
+        <button class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3" type="button" id="nyeresReset" >Local Reset</button>
+      </div>
+    </aside>
     <article class="game-board"></article>
-
     <footer>
       <div class="text-center p-3"><p>Vinczeffy Gergely</p></div>
     </footer>

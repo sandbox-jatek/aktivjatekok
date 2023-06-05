@@ -15,7 +15,8 @@ class Info {
 
                        <p>A nyertes ebben a játékban : ${tartalom}</p>
                        <br>
-                       <p>Eddig nyert ${tartalom} : ${jatekos}</p>
+                       <p>Eddig nyert X : ${window.localStorage.getItem('jatekosX')  }</p>
+                       <p>Eddig nyert O : ${window.localStorage.getItem('jatekosO')  }</p>
                     `;
 
         text += `</div>`;
