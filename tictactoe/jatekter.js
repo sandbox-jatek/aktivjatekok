@@ -39,16 +39,6 @@ class Jatekter {
     }) 
   }
   jatekosallas(){
-    const ASI = $(`aside`);
-    ASI.remove("#stat");
-   ASI.html(`      <div class="stat text-center p-3 row">
-   <p class="ertek1 col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">X Játékos : ${window.localStorage.getItem("jatekosX")}</p>
-   <p class="ertek2 col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">O Játékos : ${window.localStorage.getItem("jatekosO")}</p>
- </div>
-<div class="text-center p-3 row">
- <button class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3" type="button" id="jatekReset" >Jatek Reset</button>
- <button class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3" type="button" id="nyeresReset" >Local Reset</button>
-</div>`);
 
   }
   jatekvege() {
