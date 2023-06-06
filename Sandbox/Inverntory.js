@@ -1,6 +1,5 @@
 class Inventory {
   #allapot;
-  #szuloElem;
   #i;
   #divElem;
   #imgElem;
@@ -8,7 +7,6 @@ class Inventory {
   constructor(allapot, szuloElem, i, kepek) {
     this.#kepek = kepek;
     this.#allapot = allapot;
-    this.#szuloElem = szuloElem;
     this.#i = i;
     const IMG = $(`<img src="" alt="kep1">`);
     const DIV = $(`<div id=inv>`);
@@ -39,6 +37,8 @@ class Inventory {
       this.#imgElem.attr("src", this.#kepek[15]);
     } else if (this.#allapot == 7) {
       this.#imgElem.attr("src", this.#kepek[16]);
+    } else if (this.#allapot == 8) {
+      this.#imgElem.attr("src", this.#kepek[20]);
     }
   }
 

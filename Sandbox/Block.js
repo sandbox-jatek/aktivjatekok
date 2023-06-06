@@ -43,6 +43,8 @@ class Block {
       this.#imgElem.attr("src", this.#kepek[7]);
     } else if (allapot == 6) {
       this.#imgElem.attr("src", this.#kepek[8]);
+    } else if (allapot == 7) {
+      this.#imgElem.attr("src", this.#kepek[19]);
     }
   }
 
@@ -74,13 +76,9 @@ class Block {
   }
   #kattintas(esemeny, kattintas) {
     esemeny.on("click", () => {
-      this.#kattintasTrigger(kattintas);
+      let esemeny = new CustomEvent(kattintas, { detail: this });
+      window.dispatchEvent(esemeny);
     });
-  }
-
-  #kattintasTrigger(kattintas) {
-    let esemeny = new CustomEvent(kattintas, { detail: this });
-    window.dispatchEvent(esemeny);
   }
 
   setBlock(block, csere) {
@@ -109,6 +107,9 @@ class Block {
       } else if (csere == 7) {
         block.#allapot = 2;
         block.#imgElem.attr("src", this.#kepek[18]);
+      } else if (csere == 8) {
+        block.#allapot = 7;
+        block.#imgElem.attr("src", this.#kepek[19]);
       } else {
         block.#allapot = 1;
         block.#imgElem.attr("src", this.#kepek[0]);
