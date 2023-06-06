@@ -34,11 +34,9 @@ class Lampa {
   
     #szinBeallit() {
       if (this.#allapot === 0) {
-        this.#divElem.css("background-color", "yellow");
-        this.#divElem.css("color", "yellow");
+        this.#divElem.css("background-image", "url('kepek/creeper.png')");
       } else {
-        this.#divElem.css("background-color", "white");
-        this.#divElem.css("color", "white");
+        this.#divElem.css("background-image", "url('kepek/dirt.png')");
       }
     }
   
