@@ -1,5 +1,5 @@
-import Blokle from "./Blokle.js";
-import Inventory from "./Inventory.js";
+import Festokeszlet from "./Festokeszlet.js";
+import Szinek from "./Szinek.js";
 class Palya {
   #palyaLista = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0,],
@@ -24,7 +24,7 @@ class Palya {
     [0, 0, 0, 0, 0, 0, 0, 0, 0,],
   ];
 
-  #inventory = [1, 2, 3, 4];
+  #inventory = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
   #blokLista = [];
   #aktualisSzin;
   constructor() {
@@ -50,9 +50,9 @@ class Palya {
     for (let y = 0; y < yOldal; y++) {
       for (let x = 0; x < xOldal; x++) {
 
-        const blokle = new Blokle(id, this.#palyaLista[x][y], szuloElem);
+        const SZINEK = new Szinek(id, this.#palyaLista[x][y], szuloElem);
         id += 1;
-        this.#blokLista.push(blokle);
+        this.#blokLista.push(SZINEK);
       }
     }
   }
@@ -62,7 +62,7 @@ class Palya {
     const szuloElem = $("aside");
     for (let y = 0; y < yOldal; y++) {
 
-      const inventory = new Inventory(id, this.#inventory[y], szuloElem,);
+      const FESTKESZLET = new Festokeszlet(id, this.#inventory[y], szuloElem,);
 
       id += 1;
 
