@@ -9,7 +9,6 @@ class Lampa {
       this.id = id;
   
       const DIV = $("<div>").addClass("keret kapcsolas");
-      DIV.text(allapot);
       szuloElem.append(DIV);
       this.#divElem = szuloElem.children("div:last-child");
   
