@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* /////////////////////////////////////////////////////////////////// */
- ::before, ::after {
+*, ::before, ::after {
 	box-sizing: border-box;	margin: 0; padding: 0;
 }
 @font-face {
@@ -12,6 +12,7 @@
 html { font: 12pt 'Minecraftia', sans-serif; }
 body {
 	height: 100vh;
+	@include flex-center-hv;
 	flex-direction: column;
 	background-color: #fff;
 	background-image: url('https://i.ibb.co/bH3JY30/IE1G7Lr.png');
@@ -29,18 +30,23 @@ body {
 	'. 		first 		.'
 	'. 		second 		.'
 	'. 		third 		.'
-	'. 		fourthy 	.'
-    '. 		fifty 		.'
+	'. 		fourth 		.'
+	'. 		five 		.'
 	;
 	grid-gap: 8px;
 
 	& .mc-button:nth-child(1) { grid-area: first;	}
 	& .mc-button:nth-child(2) { grid-area: second;	}
 	& .mc-button:nth-child(3) { grid-area: third;	}
-  	& .mc-button:nth-child(4) { grid-area: fourthy;	}
-	& .mc-button:nth-child(5) { grid-area: fifty;	}
+	& .mc-button:nth-child(4) { grid-area: fourth;	}
+	& .mc-button:nth-child(5) { grid-area: five;	}
+	& .double {
+		grid-area: fourth;
+		& .mc-button:nth-child(1) { grid-area: left; }
+		& .mc-button:nth-child(2) { grid-area: right; }	}
+	}
 
-}
+
 
 /* Minecraft Style Button */
 .mc-button {
@@ -81,30 +87,32 @@ body {
 		& .title  { padding-bottom: 0; } }
 }
 
-header{
+header {
   margin: auto;
   padding-top: 20px;
   max-width: 35%;
   font-size: 50px;
- text-align: center;
+  text-align: center;
 }
-article{
-  margin: 0 auto;
-  padding-top: 150px;
-  max-width: 35%;
- text-align: center;
+article {
+	padding-top: 50px;
+	margin: 0 auto;
+	max-width: fit-content;
+  text-align: center;
 }
 
-footer{
+footer {
   margin: 0 auto;
   max-width: 35%;
   font-size: 15px;
- text-align: center;
+  text-align: center;
 }
-
-a{
-	text-decoration: none;
+.title{
+	padding-top: 3px;
 }
-a::after{
-	text-decoration: none;
+a {
+  text-decoration: none;
+}
+a::after {
+  text-decoration: none;
 }
