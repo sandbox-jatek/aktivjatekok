@@ -3,12 +3,7 @@
 class Info {
 
     constructor(cim, tartalom, szuloElem) {
-        let jatekos;
-        if (tartalom == "X") {
-           jatekos =  window.localStorage.getItem('jatekosX');  
-        }else{
-            jatekos =  window.localStorage.getItem('jatekosO');  
-        }
+
         let text = ` <div class="info">
                         <button>❌</button>
                         <h3>${cim}</h3>

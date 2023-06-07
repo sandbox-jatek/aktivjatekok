@@ -1,7 +1,6 @@
 class Elem{
     #index;
     #allapot = true;
-    #vaghato = false;
     
     constructor(index,ART){
         this.#index=index;
@@ -13,16 +12,10 @@ class Elem{
             if ((this.#allapot)) {
                 this.Katt();
                 this.#allapot = false;
-            }else if(this.#vaghato){
-                this.ablak();
-                
             }
             
         })
 
-    }
-    setvaghato(ertek){
-        this.#vaghato = ertek;
     }
     getIndex(){
         return this.#index;
@@ -30,9 +23,6 @@ class Elem{
     setPosiSyin(adat , szin){
         this.tag.html(adat);
         this.divElem.css("background-color",szin)
-    }
-    ablak(){
-        this.Katt("jatekvege");
     }
     Katt(){
         const ESEMENY = new CustomEvent("elemKatt",{detail: this});

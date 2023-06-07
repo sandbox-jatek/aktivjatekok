@@ -28,7 +28,7 @@ class Jatekter {
       this.#lepes++;
       this.#nyertes = kesz;
       if (this.#nyertes == "X" || this.#nyertes == "O") {
-        this.jatekvege();
+        this.jatekvegeAllapot();
 
         
       }
@@ -41,7 +41,7 @@ class Jatekter {
   jatekosallas(){
 
   }
-  jatekvege() {
+  jatekvegeAllapot() {
     let pontX;
     let pontO;
     console.log(window.localStorage.getItem("jatekosX"));
