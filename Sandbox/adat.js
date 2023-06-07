@@ -17,7 +17,9 @@ const kepekLista = [
   "kepek/invDeszka.PNG",
   "kepek/invDeszkahatter.PNG",
   "kepek/deszka.jpg",
-  "kepek/deszkahatter.PNG"
+  "kepek/deszkahatter.PNG",
+  "kepek/viz.jpg",
+  "kepek/invViz.PNG"
 ];
 
 export default kepekLista;

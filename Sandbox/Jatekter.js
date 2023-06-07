@@ -179,16 +179,16 @@ class Jatekter {
       "3",
       "3",
       "3",
-      "3",
       "0",
       "0",
       "0",
-      "0",
-      "3",
-      "3",
       "0",
       "0",
       "3",
+      "3",
+      "7",
+      "7",
+      "7",
       "1",
       "1",
       "1",
@@ -203,15 +203,15 @@ class Jatekter {
       "1",
       "1",
       "1",
+      "3",
+      "3",
+      "3",
+      "3",
+      "3",
       "1",
-      "3",
-      "3",
-      "3",
-      "3",
       "1",
       "1",
-      "3",
-      "3",
+      "1",
       "1",
       "1",
       "1",
@@ -413,7 +413,7 @@ class Jatekter {
     ],
   ];
 
-  #inventory = ["0", "1", "2", "3", "4", "5", "6", "7"];
+  #inventory = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
   #JatekterDb = 0;
   #foldszint = this.#jatek.length - 1;
   #tarhely = [];
@@ -625,6 +625,7 @@ class Jatekter {
     } else {
       this.#tarhely = $().empty();
     }
+    this.#tarhely = $().empty();
   }
 
   jobbrale(i) {
@@ -643,6 +644,7 @@ class Jatekter {
     } else {
       this.#tarhely = $().empty();
     }
+    this.#tarhely = $().empty();
   }
 
   ellenorzes() {
