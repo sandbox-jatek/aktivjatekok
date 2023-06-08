@@ -47,7 +47,7 @@ p {
     width: 600px;
     height: 600px;
     margin: 0 auto;
-    background-image:url(/LightOn/kepek/table.PNG);
+    background-color: gray;
     background-size: cover;
     border: 8px solid black;
     border-radius: 10px;
